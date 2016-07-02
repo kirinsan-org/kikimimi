@@ -14,6 +14,7 @@
 		7907E91F1D2820A00035F715 /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907E91E1D2820A00035F715 /* BubbleNode.swift */; };
 		7907E9211D2820DE0035F715 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907E9201D2820DE0035F715 /* Extensions.swift */; };
 		7907E9251D2833BC0035F715 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907E9241D2833BC0035F715 /* GCD.swift */; };
+		790F829F1D284EF2002989B5 /* SoundCommandsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790F829E1D284EF2002989B5 /* SoundCommandsListController.swift */; };
 		BF6141FD1D27DC54006FE215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6141FC1D27DC54006FE215 /* AppDelegate.swift */; };
 		BF6142041D27DC54006FE215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6142031D27DC54006FE215 /* Assets.xcassets */; };
 		BF6142071D27DC54006FE215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6142051D27DC54006FE215 /* LaunchScreen.storyboard */; };
@@ -82,6 +83,7 @@
 		7907E91E1D2820A00035F715 /* BubbleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleNode.swift; sourceTree = "<group>"; };
 		7907E9201D2820DE0035F715 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7907E9241D2833BC0035F715 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
+		790F829E1D284EF2002989B5 /* SoundCommandsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCommandsListController.swift; sourceTree = "<group>"; };
 		8DA30DD82BD55E817DFB7947 /* Pods_Kikimimi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kikimimi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75607DB504E676CC501F75A /* Pods-Kikimimi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikimimi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kikimimi/Pods-Kikimimi.debug.xcconfig"; sourceTree = "<group>"; };
 		BF6141F91D27DC54006FE215 /* Kikimimi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kikimimi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,14 @@
 			path = Visualizer;
 			sourceTree = "<group>";
 		};
+		790F829D1D284EF2002989B5 /* SoundCommandsList */ = {
+			isa = PBXGroup;
+			children = (
+				790F829E1D284EF2002989B5 /* SoundCommandsListController.swift */,
+			);
+			path = SoundCommandsList;
+			sourceTree = "<group>";
+		};
 		BF6141F01D27DC54006FE215 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +181,7 @@
 				BF6142331D27F531006FE215 /* SoundAnalyzer */,
 				BF61422B1D27E8E6006FE215 /* DisplayLink.swift */,
 				7907E9171D2818DD0035F715 /* Visualizer */,
+				790F829D1D284EF2002989B5 /* SoundCommandsList */,
 				BF6142031D27DC54006FE215 /* Assets.xcassets */,
 				BF6142051D27DC54006FE215 /* LaunchScreen.storyboard */,
 				BF6142081D27DC54006FE215 /* Info.plist */,
@@ -363,6 +374,7 @@
 				7907E91B1D2819AD0035F715 /* VisualizerView.swift in Sources */,
 				BF6141FD1D27DC54006FE215 /* AppDelegate.swift in Sources */,
 				7907E9251D2833BC0035F715 /* GCD.swift in Sources */,
+				790F829F1D284EF2002989B5 /* SoundCommandsListController.swift in Sources */,
 				7907E91D1D2819E40035F715 /* VisualizerScene.swift in Sources */,
 				7907E91F1D2820A00035F715 /* BubbleNode.swift in Sources */,
 				BF61420F1D27DC9E006FE215 /* RootViewController.swift in Sources */,
