@@ -14,8 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
-	let firebaseManager = FirebaseManager()
-
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		FIRApp.configure()
 
@@ -23,14 +21,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		window?.rootViewController = RootViewController(nibName: nil, bundle: nil)
 		window?.makeKeyAndVisible()
 
+		let firebaseManager = FirebaseManager.sharedInstance
+		firebaseManager.observerEvent { event in
+			switch event {
+			case .CommandListChanged(let commands):
+				print("[CommandListChanged] \(commands)")
+			case .DetectedCommandChanged(let command):
+				print("[DetectedCommandChanged] \(command)")
+			}
+		}
+
 		let analyzer = SoundAnalyzer.sharedInstance
 		analyzer.observerEvent { event in
 			switch event {
 			case .StartRecording:
-				print("recording…")
+				print("[StartRecording]")
 			case .StopRecording(let optimizedFFTData):
-				self.firebaseManager.pushRecordedFFTData(optimizedFFTData)
-				print("pushed FFT data")
+				firebaseManager.pushRecordedFFTData(optimizedFFTData)
+				print("[StopRecording] >> pushed FFT data")
 			default:
 				break
 			}

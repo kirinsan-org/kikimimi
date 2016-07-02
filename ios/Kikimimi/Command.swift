@@ -11,6 +11,16 @@ import Foundation
 struct Command {
 	let id: String
 	let name: String
-	let icon: NSURL
-	let action: NSURL
+	let icon: String
+	let action: String
+}
+
+func ==(lhs: Command, rhs: Command) -> Bool {
+	return lhs.id == rhs.id
+}
+
+extension Command: Hashable {
+	var hashValue: Int {
+		return id.hashValue
+	}
 }
