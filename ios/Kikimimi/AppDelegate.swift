@@ -7,17 +7,35 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
+	let firebaseManager = FirebaseManager()
+
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+		FIRApp.configure()
 
 		window = UIWindow(frame: UIScreen.mainScreen().bounds)
 		window?.rootViewController = RootViewController(nibName: nil, bundle: nil)
 		window?.makeKeyAndVisible()
+
+		let analyzer = SoundAnalyzer.sharedInstance
+		analyzer.observerEvent { event in
+			switch event {
+			case .StartRecording:
+				print("recording…")
+			case .StopRecording(let optimizedFFTData):
+				self.firebaseManager.pushRecordedFFTData(optimizedFFTData)
+				print("pushed FFT data")
+			default:
+				break
+			}
+		}
+		analyzer.startListening()
 
 		return true
 	}
