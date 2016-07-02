@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		39D84ACC30810058FF65CDF3 /* Pods_Kikimimi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA30DD82BD55E817DFB7947 /* Pods_Kikimimi.framework */; };
+		7907E9191D28190F0035F715 /* VisualizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907E9181D28190F0035F715 /* VisualizerViewController.swift */; };
+		7907E91B1D2819AD0035F715 /* VisualizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907E91A1D2819AD0035F715 /* VisualizerView.swift */; };
+		7907E91D1D2819E40035F715 /* VisualizerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907E91C1D2819E40035F715 /* VisualizerScene.swift */; };
 		BF6141FD1D27DC54006FE215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6141FC1D27DC54006FE215 /* AppDelegate.swift */; };
 		BF6142041D27DC54006FE215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6142031D27DC54006FE215 /* Assets.xcassets */; };
 		BF6142071D27DC54006FE215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6142051D27DC54006FE215 /* LaunchScreen.storyboard */; };
@@ -32,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		0D2E13707EC13001AFEB3CF6 /* Pods-Kikimimi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikimimi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kikimimi/Pods-Kikimimi.release.xcconfig"; sourceTree = "<group>"; };
+		7907E9181D28190F0035F715 /* VisualizerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualizerViewController.swift; sourceTree = "<group>"; };
+		7907E91A1D2819AD0035F715 /* VisualizerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualizerView.swift; sourceTree = "<group>"; };
+		7907E91C1D2819E40035F715 /* VisualizerScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualizerScene.swift; sourceTree = "<group>"; };
 		8DA30DD82BD55E817DFB7947 /* Pods_Kikimimi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kikimimi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75607DB504E676CC501F75A /* Pods-Kikimimi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikimimi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kikimimi/Pods-Kikimimi.debug.xcconfig"; sourceTree = "<group>"; };
 		BF6141F91D27DC54006FE215 /* Kikimimi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kikimimi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +80,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7907E9171D2818DD0035F715 /* Visualizer */ = {
+			isa = PBXGroup;
+			children = (
+				7907E9181D28190F0035F715 /* VisualizerViewController.swift */,
+				7907E91A1D2819AD0035F715 /* VisualizerView.swift */,
+				7907E91C1D2819E40035F715 /* VisualizerScene.swift */,
+			);
+			path = Visualizer;
+			sourceTree = "<group>";
+		};
 		BF6141F01D27DC54006FE215 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +113,7 @@
 			children = (
 				BF6141FC1D27DC54006FE215 /* AppDelegate.swift */,
 				BF61420E1D27DC9E006FE215 /* RootViewController.swift */,
+				7907E9171D2818DD0035F715 /* Visualizer */,
 				BF6142031D27DC54006FE215 /* Assets.xcassets */,
 				BF6142051D27DC54006FE215 /* LaunchScreen.storyboard */,
 				BF6142081D27DC54006FE215 /* Info.plist */,
@@ -226,8 +243,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7907E91B1D2819AD0035F715 /* VisualizerView.swift in Sources */,
 				BF6141FD1D27DC54006FE215 /* AppDelegate.swift in Sources */,
+				7907E91D1D2819E40035F715 /* VisualizerScene.swift in Sources */,
 				BF61420F1D27DC9E006FE215 /* RootViewController.swift in Sources */,
+				7907E9191D28190F0035F715 /* VisualizerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
