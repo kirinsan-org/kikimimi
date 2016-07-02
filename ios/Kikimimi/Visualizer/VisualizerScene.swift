@@ -29,9 +29,10 @@ class VisualizerScene: SKScene {
 			node.strokeColor = .cyanColor()
 			node.position = .createRandom(x: radius ... self.size.width - radius, y: radius ... self.size.height - radius)
 			
-			let moveAction = SKAction.moveBy(CGVector(dx: .createRandom(in: -10 ... 10), dy: .createRandom(in: -10 ... 10)), duration: 1)
+			let moveAction = SKAction.moveBy(CGVector(dx: .createRandom(in: -50 ... 50), dy: .createRandom(in: -50 ... 50)), duration: 1)
 			let repeatedAction = SKAction.repeatActionForever(moveAction)
 			node.runAction(repeatedAction)
+			
 			self.addChild(node)
 		}
 		
@@ -46,9 +47,9 @@ class VisualizerScene: SKScene {
 		}).enumerate().forEach({ (i, bubble) in
 			
 			if i < scales.count {
-				bubble.setScale(scales[i])
+				bubble.setScale(scales[i] + .createRandom(in: -0.05 ... 0.05))
 			} else {
-				bubble.setScale(0.1)
+				bubble.setScale(.createRandom(in: 0.4 ... 0.6))
 			}
 			
 			if bubble.frame.top <= self.frame.top && bubble.frame.left <= self.frame.left {
