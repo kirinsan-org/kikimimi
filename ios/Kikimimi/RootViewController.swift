@@ -13,5 +13,12 @@ class RootViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
+	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		let controller = VisualizerViewController()
+		self.presentViewController(controller, animated: false, completion: nil)
+	}
 
 }
