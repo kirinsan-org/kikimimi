@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		39D84ACC30810058FF65CDF3 /* Pods_Kikimimi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA30DD82BD55E817DFB7947 /* Pods_Kikimimi.framework */; };
+		BF6141FD1D27DC54006FE215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6141FC1D27DC54006FE215 /* AppDelegate.swift */; };
+		BF6142041D27DC54006FE215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6142031D27DC54006FE215 /* Assets.xcassets */; };
+		BF6142071D27DC54006FE215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6142051D27DC54006FE215 /* LaunchScreen.storyboard */; };
+		BF61420F1D27DC9E006FE215 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61420E1D27DC9E006FE215 /* RootViewController.swift */; };
+		BF6142271D27E1AE006FE215 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6142261D27E1AE006FE215 /* AudioKit.framework */; };
+		BF6142281D27E1AE006FE215 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF6142261D27E1AE006FE215 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BF61421F1D27E07C006FE215 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF6142281D27E1AE006FE215 /* AudioKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0D2E13707EC13001AFEB3CF6 /* Pods-Kikimimi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikimimi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kikimimi/Pods-Kikimimi.release.xcconfig"; sourceTree = "<group>"; };
+		8DA30DD82BD55E817DFB7947 /* Pods_Kikimimi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kikimimi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B75607DB504E676CC501F75A /* Pods-Kikimimi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikimimi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kikimimi/Pods-Kikimimi.debug.xcconfig"; sourceTree = "<group>"; };
+		BF6141F91D27DC54006FE215 /* Kikimimi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kikimimi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF6141FC1D27DC54006FE215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF6142031D27DC54006FE215 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF6142061D27DC54006FE215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF6142081D27DC54006FE215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF61420E1D27DC9E006FE215 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		BF6142261D27E1AE006FE215 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF6141F61D27DC54006FE215 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF6142271D27E1AE006FE215 /* AudioKit.framework in Frameworks */,
+				39D84ACC30810058FF65CDF3 /* Pods_Kikimimi.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13692CB9238F71009EA8C0FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B75607DB504E676CC501F75A /* Pods-Kikimimi.debug.xcconfig */,
+				0D2E13707EC13001AFEB3CF6 /* Pods-Kikimimi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		752664C6D9033A020365130E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF6142261D27E1AE006FE215 /* AudioKit.framework */,
+				8DA30DD82BD55E817DFB7947 /* Pods_Kikimimi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6141F01D27DC54006FE215 = {
+			isa = PBXGroup;
+			children = (
+				BF6141FB1D27DC54006FE215 /* Kikimimi */,
+				BF6141FA1D27DC54006FE215 /* Products */,
+				13692CB9238F71009EA8C0FD /* Pods */,
+				752664C6D9033A020365130E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BF6141FA1D27DC54006FE215 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF6141F91D27DC54006FE215 /* Kikimimi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF6141FB1D27DC54006FE215 /* Kikimimi */ = {
+			isa = PBXGroup;
+			children = (
+				BF6141FC1D27DC54006FE215 /* AppDelegate.swift */,
+				BF61420E1D27DC9E006FE215 /* RootViewController.swift */,
+				BF6142031D27DC54006FE215 /* Assets.xcassets */,
+				BF6142051D27DC54006FE215 /* LaunchScreen.storyboard */,
+				BF6142081D27DC54006FE215 /* Info.plist */,
+			);
+			path = Kikimimi;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF6141F81D27DC54006FE215 /* Kikimimi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF61420B1D27DC54006FE215 /* Build configuration list for PBXNativeTarget "Kikimimi" */;
+			buildPhases = (
+				72B7AC144648361DB076B29C /* [CP] Check Pods Manifest.lock */,
+				BF6141F51D27DC54006FE215 /* Sources */,
+				BF6141F61D27DC54006FE215 /* Frameworks */,
+				BF6141F71D27DC54006FE215 /* Resources */,
+				537021977DC851368C3FC64F /* [CP] Embed Pods Frameworks */,
+				252FF870282D9E8B029410DC /* [CP] Copy Pods Resources */,
+				BF61421F1D27E07C006FE215 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kikimimi;
+			productName = Kikimimi;
+			productReference = BF6141F91D27DC54006FE215 /* Kikimimi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF6141F11D27DC54006FE215 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = kirinsan.org;
+				TargetAttributes = {
+					BF6141F81D27DC54006FE215 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = BF6141F41D27DC54006FE215 /* Build configuration list for PBXProject "Kikimimi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF6141F01D27DC54006FE215;
+			productRefGroup = BF6141FA1D27DC54006FE215 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF6141F81D27DC54006FE215 /* Kikimimi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF6141F71D27DC54006FE215 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF6142071D27DC54006FE215 /* LaunchScreen.storyboard in Resources */,
+				BF6142041D27DC54006FE215 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		252FF870282D9E8B029410DC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kikimimi/Pods-Kikimimi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		537021977DC851368C3FC64F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kikimimi/Pods-Kikimimi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72B7AC144648361DB076B29C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF6141F51D27DC54006FE215 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF6141FD1D27DC54006FE215 /* AppDelegate.swift in Sources */,
+				BF61420F1D27DC9E006FE215 /* RootViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BF6142051D27DC54006FE215 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF6142061D27DC54006FE215 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF6142091D27DC54006FE215 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BF61420A1D27DC54006FE215 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF61420C1D27DC54006FE215 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B75607DB504E676CC501F75A /* Pods-Kikimimi.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Kikimimi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.kirinsan.Kikimimi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BF61420D1D27DC54006FE215 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D2E13707EC13001AFEB3CF6 /* Pods-Kikimimi.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Kikimimi/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.kirinsan.Kikimimi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF6141F41D27DC54006FE215 /* Build configuration list for PBXProject "Kikimimi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF6142091D27DC54006FE215 /* Debug */,
+				BF61420A1D27DC54006FE215 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF61420B1D27DC54006FE215 /* Build configuration list for PBXNativeTarget "Kikimimi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF61420C1D27DC54006FE215 /* Debug */,
+				BF61420D1D27DC54006FE215 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF6141F11D27DC54006FE215 /* Project object */;
+}

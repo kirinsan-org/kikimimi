@@ -1,0 +1,6 @@
+framework module Pods_Kikimimi {
+  umbrella header "Pods-Kikimimi-umbrella.h"
+
+  export *
+  module * { export * }
+}
