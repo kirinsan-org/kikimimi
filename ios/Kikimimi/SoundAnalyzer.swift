@@ -73,7 +73,7 @@ final class SoundAnalyzer {
 						let values = self.recordingFFTData.map({ $0.values[i] })
 						averageValues[i] = values.reduce(0, combine: { $0 + $1 }) / count
 					}
-					let optimizedFFTData = FFTData(values: averageValues)
+					let optimizedFFTData = FFTData(values: averageValues).normalized
 					self.recordingFFTData.removeAll()
 					self.isRecording = false
 					self.triggerEvent(.StopRecording(optimizedFFTData: optimizedFFTData))
@@ -90,7 +90,7 @@ final class SoundAnalyzer {
 			}
 
 			if self.isListening {
-				self.triggerEvent(.Update(amplitude: amplitude, fftData: fftData, isRecording: self.isRecording))
+				self.triggerEvent(.Update(amplitude: amplitude, fftData: fftData.normalized, isRecording: self.isRecording))
 			}
 
 			self.lastAmplitude = amplitude
