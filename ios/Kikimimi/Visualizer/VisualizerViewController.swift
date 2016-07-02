@@ -102,7 +102,8 @@ extension VisualizerViewController: VisualizerSceneDataSource {
 			var newElement = lastFFTElement + element.element
 			
 			if element.index % fftElementsPerBubble == fftElementsPerBubble.decreased {
-//				newElement /= Double(fftElementsPerBubble)
+				newElement /= Double(fftElementsPerBubble)
+				newElement *= 4
 				newElement += 0.5
 			}
 			
