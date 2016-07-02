@@ -14,6 +14,7 @@
 		BF61420F1D27DC9E006FE215 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61420E1D27DC9E006FE215 /* RootViewController.swift */; };
 		BF6142271D27E1AE006FE215 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6142261D27E1AE006FE215 /* AudioKit.framework */; };
 		BF6142281D27E1AE006FE215 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF6142261D27E1AE006FE215 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF6142401D282B09006FE215 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF61423F1D282B09006FE215 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,7 @@
 		BF6142081D27DC54006FE215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF61420E1D27DC9E006FE215 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		BF6142261D27E1AE006FE215 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
+		BF61423F1D282B09006FE215 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				BF6142031D27DC54006FE215 /* Assets.xcassets */,
 				BF6142051D27DC54006FE215 /* LaunchScreen.storyboard */,
 				BF6142081D27DC54006FE215 /* Info.plist */,
+				BF61423F1D282B09006FE215 /* GoogleService-Info.plist */,
 			);
 			path = Kikimimi;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			files = (
 				BF6142071D27DC54006FE215 /* LaunchScreen.storyboard in Resources */,
 				BF6142041D27DC54006FE215 /* Assets.xcassets in Resources */,
+				BF6142401D282B09006FE215 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

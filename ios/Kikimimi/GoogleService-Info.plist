@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>155174788066-vprv1cgtletbjm573hjghm1fkojm3df3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.155174788066-vprv1cgtletbjm573hjghm1fkojm3df3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA4B6EgmNq13yLc1ahafrG7g79fhkEnwr0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>155174788066</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.kirinsan.kikimimi</string>
+	<key>PROJECT_ID</key>
+	<string>spajam2016-kirinsan-org</string>
+	<key>STORAGE_BUCKET</key>
+	<string>spajam2016-kirinsan-org.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:155174788066:ios:90857d96d6fe06c8</string>
+	<key>DATABASE_URL</key>
+	<string>https://spajam2016-kirinsan-org.firebaseio.com</string>
+</dict>
+</plist>
