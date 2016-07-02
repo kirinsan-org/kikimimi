@@ -10,6 +10,8 @@ import UIKit
 
 class RootViewController: UIViewController {
 
+	private var fftData: FFTData?
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
@@ -18,7 +20,23 @@ class RootViewController: UIViewController {
 		super.viewDidAppear(animated)
 		
 		let controller = VisualizerViewController()
+		controller.sceneDataSource = self
 		self.presentViewController(controller, animated: false, completion: nil)
+
+		SoundAnalyzer.sharedInstance.observerEvent { [weak self] event in
+			switch event {
+				case .Update(_, let fftData, _):
+				self?.fftData = fftData
+			default:
+				break
+			}
+		}
 	}
 
+}
+
+extension RootViewController: VisualizerSceneDataSource {
+	func getFFTSampleArray() -> [Double] {
+		return fftData?.values ?? []
+	}
 }
