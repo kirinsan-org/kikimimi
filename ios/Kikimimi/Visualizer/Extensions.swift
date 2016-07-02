@@ -8,6 +8,18 @@
 
 import SpriteKit
 
+extension Int {
+	
+	var decreased: Int {
+		return self.advancedBy(-1)
+	}
+	
+	var increased: Int {
+		return self.advancedBy(1)
+	}
+	
+}
+
 extension CGFloat {
 	
 	static func createRandom(`in` interval: ClosedInterval<CGFloat> = 0 ... 1) -> CGFloat {

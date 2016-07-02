@@ -10,6 +10,7 @@ import SpriteKit
 
 protocol VisualizerSceneDataSource: class {
 	func getBubbleSettings() -> [UIColor]
+	func getBubbleScales() -> [CGFloat]
 }
 
 class VisualizerScene: SKScene {
@@ -38,73 +39,77 @@ class VisualizerScene: SKScene {
 	
 	override func update(currentTime: NSTimeInterval) {
 		
-		for child in children {
+		let scales = self.dataSource?.getBubbleScales() ?? []
+		
+		self.children.flatMap({ (node) -> BubbleNode? in
+			return node as? BubbleNode
+		}).enumerate().forEach({ (i, bubble) in
 			
-			switch child {
-			case let bubble as BubbleNode:
-				if bubble.frame.top <= self.frame.top && bubble.frame.left <= self.frame.left {
-					let action = SKAction.eternalMove(byX: 0 ... 10, y: 0 ... 10)
-					bubble.removeAllActions()
-					GCD.runAsynchronizedQueue(with: { 
-						bubble.runAction(action)
-					})
-					
-				} else if bubble.frame.top <= self.frame.top && bubble.frame.right >= self.frame.right {
-					let action = SKAction.eternalMove(byX: -10 ... 0, y: 0 ... 10)
-					bubble.removeAllActions()
-					GCD.runAsynchronizedQueue(with: {
-						bubble.runAction(action)
-					})
-					
-				} else if bubble.frame.bottom >= self.frame.bottom && bubble.frame.left <= self.frame.left {
-					let action = SKAction.eternalMove(byX: 0 ... 10, y: -10 ... 0)
-					bubble.removeAllActions()
-					GCD.runAsynchronizedQueue(with: {
-						bubble.runAction(action)
-					})
-					
-				} else if bubble.frame.bottom >= self.frame.bottom && bubble.frame.right >= self.frame.right {
-					let action = SKAction.eternalMove(byX: -10 ... 0, y: -10 ... 0)
-					bubble.removeAllActions()
-					GCD.runAsynchronizedQueue(with: {
-						bubble.runAction(action)
-					})
-					
-				} else if bubble.frame.top <= self.frame.top {
-					let action = SKAction.eternalMove(byX: -10 ... 10, y: 0 ... 10)
-					bubble.removeAllActions()
-					GCD.runAsynchronizedQueue(with: {
-						bubble.runAction(action)
-					})
-					
-				} else if bubble.frame.bottom >= self.frame.bottom {
-					let action = SKAction.eternalMove(byX: -10 ... 10, y: -10 ... 0)
-					bubble.removeAllActions()
-					GCD.runAsynchronizedQueue(with: {
-						bubble.runAction(action)
-					})
-					
-				} else if bubble.frame.left <= self.frame.left {
-					let action = SKAction.eternalMove(byX: 0 ... 10, y: -10 ... 10)
-					bubble.removeAllActions()
-					GCD.runAsynchronizedQueue(with: {
-						bubble.runAction(action)
-					})
-					
-				} else if bubble.frame.right >= self.frame.right {
-					let action = SKAction.eternalMove(byX: -10 ... 0, y: -10 ... 10)
-					bubble.removeAllActions()
-					GCD.runAsynchronizedQueue(with: {
-						bubble.runAction(action)
-					})
-					
-				}
-				
-			default:
-				break
+			if i < scales.count {
+				bubble.setScale(scales[i])
+			} else {
+				bubble.setScale(0.1)
 			}
 			
-		}
+			if bubble.frame.top <= self.frame.top && bubble.frame.left <= self.frame.left {
+				let action = SKAction.eternalMove(byX: 0 ... 10, y: 0 ... 10)
+				bubble.removeAllActions()
+				GCD.runAsynchronizedQueue(with: {
+					bubble.runAction(action)
+				})
+				
+			} else if bubble.frame.top <= self.frame.top && bubble.frame.right >= self.frame.right {
+				let action = SKAction.eternalMove(byX: -10 ... 0, y: 0 ... 10)
+				bubble.removeAllActions()
+				GCD.runAsynchronizedQueue(with: {
+					bubble.runAction(action)
+				})
+				
+			} else if bubble.frame.bottom >= self.frame.bottom && bubble.frame.left <= self.frame.left {
+				let action = SKAction.eternalMove(byX: 0 ... 10, y: -10 ... 0)
+				bubble.removeAllActions()
+				GCD.runAsynchronizedQueue(with: {
+					bubble.runAction(action)
+				})
+				
+			} else if bubble.frame.bottom >= self.frame.bottom && bubble.frame.right >= self.frame.right {
+				let action = SKAction.eternalMove(byX: -10 ... 0, y: -10 ... 0)
+				bubble.removeAllActions()
+				GCD.runAsynchronizedQueue(with: {
+					bubble.runAction(action)
+				})
+				
+			} else if bubble.frame.top <= self.frame.top {
+				let action = SKAction.eternalMove(byX: -10 ... 10, y: 0 ... 10)
+				bubble.removeAllActions()
+				GCD.runAsynchronizedQueue(with: {
+					bubble.runAction(action)
+				})
+				
+			} else if bubble.frame.bottom >= self.frame.bottom {
+				let action = SKAction.eternalMove(byX: -10 ... 10, y: -10 ... 0)
+				bubble.removeAllActions()
+				GCD.runAsynchronizedQueue(with: {
+					bubble.runAction(action)
+				})
+				
+			} else if bubble.frame.left <= self.frame.left {
+				let action = SKAction.eternalMove(byX: 0 ... 10, y: -10 ... 10)
+				bubble.removeAllActions()
+				GCD.runAsynchronizedQueue(with: {
+					bubble.runAction(action)
+				})
+				
+			} else if bubble.frame.right >= self.frame.right {
+				let action = SKAction.eternalMove(byX: -10 ... 0, y: -10 ... 10)
+				bubble.removeAllActions()
+				GCD.runAsynchronizedQueue(with: {
+					bubble.runAction(action)
+				})
+				
+			}
+			
+		})
 		
 	}
 	

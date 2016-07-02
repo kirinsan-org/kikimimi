@@ -8,8 +8,8 @@
 
 import UIKit
 
-protocol VisualizerViewControllerDataSource: class, VisualizerSceneDataSource{
-	func getFTTSampleArray() -> [Double]
+protocol VisualizerViewControllerDataSource: class{
+	func getFFTSampleArray() -> [Double]
 }
 
 class VisualizerViewController: UIViewController {
@@ -79,6 +79,42 @@ extension VisualizerViewController: VisualizerSceneDataSource {
 	
 	func getBubbleSettings() -> [UIColor] {
 		return self.bubbleColors
+	}
+	
+	func getBubbleScales() -> [CGFloat] {
+		guard let array = self.dataSource?.getFFTSampleArray() where array.count >= self.bubbleColors.count else {
+			return [CGFloat](count: self.bubbleColors.count, repeatedValue: 0.5)
+		}
+		
+		let fftElementsPerBubble = array.count / self.bubbleColors.count
+		let scales = array.enumerate().reduce([]) { (scales, element) -> [Double] in
+			var scales = scales
+			
+			let lastFFTElement: Double
+			if element.index % fftElementsPerBubble == 0 {
+				lastFFTElement = 0
+				
+			} else {
+				lastFFTElement = scales.last ?? 0
+				scales.removeLast()
+			}
+			
+			var newElement = lastFFTElement + element.element
+			
+			if element.index % fftElementsPerBubble == fftElementsPerBubble.decreased {
+				newElement /= Double(fftElementsPerBubble)
+				newElement += 0.5
+			}
+			
+			scales.append(newElement)
+			return scales
+			
+		}
+		
+		return scales.map({ (scale) -> CGFloat in
+			return CGFloat(scale)
+		})
+		
 	}
 	
 }

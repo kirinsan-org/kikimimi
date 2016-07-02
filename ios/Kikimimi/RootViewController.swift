@@ -20,8 +20,10 @@ class RootViewController: UIViewController {
 		super.viewDidAppear(animated)
 		
 		let controller = VisualizerViewController()
-		controller.sceneDataSource = self
-		self.presentViewController(controller, animated: false, completion: nil)
+		controller.dataSource = self
+		self.addChildViewController(controller)
+		self.view.addSubview(controller.view)
+		controller.didMoveToParentViewController(self)
 
 		SoundAnalyzer.sharedInstance.observerEvent { [weak self] event in
 			switch event {
@@ -35,7 +37,7 @@ class RootViewController: UIViewController {
 
 }
 
-extension RootViewController: VisualizerSceneDataSource {
+extension RootViewController: VisualizerViewControllerDataSource {
 	func getFFTSampleArray() -> [Double] {
 		return fftData?.values ?? []
 	}
