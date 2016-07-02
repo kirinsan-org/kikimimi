@@ -12,5 +12,5 @@ struct Command {
 	let id: String
 	let name: String
 	let icon: NSURL
-	let URI: NSURL
+	let action: NSURL
 }
