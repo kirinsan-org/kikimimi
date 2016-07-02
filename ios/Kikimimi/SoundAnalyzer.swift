@@ -60,7 +60,7 @@ final class SoundAnalyzer {
 			if self.isRecording {
 				self.recordingFFTData.append(fftData)
 				if let startTime = self.recordingStartTime where currentTime - startTime > self.recordingDuration {
-					let count = 256
+					let count = 1024
 					var averageValues = Array<Double>(count: count, repeatedValue: 0)
 					for i in 0..<count {
 						let values = self.recordingFFTData.map({ $0.values[i] })

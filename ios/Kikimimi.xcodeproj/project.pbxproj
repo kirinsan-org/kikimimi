@@ -14,12 +14,11 @@
 		7907E91F1D2820A00035F715 /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907E91E1D2820A00035F715 /* BubbleNode.swift */; };
 		7907E9211D2820DE0035F715 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907E9201D2820DE0035F715 /* Extensions.swift */; };
 		7907E9251D2833BC0035F715 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907E9241D2833BC0035F715 /* GCD.swift */; };
+		790F829F1D284EF2002989B5 /* SoundCommandsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790F829E1D284EF2002989B5 /* SoundCommandsListController.swift */; };
 		BF6141FD1D27DC54006FE215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6141FC1D27DC54006FE215 /* AppDelegate.swift */; };
 		BF6142041D27DC54006FE215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6142031D27DC54006FE215 /* Assets.xcassets */; };
 		BF6142071D27DC54006FE215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6142051D27DC54006FE215 /* LaunchScreen.storyboard */; };
 		BF61420F1D27DC9E006FE215 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61420E1D27DC9E006FE215 /* RootViewController.swift */; };
-		BF6142271D27E1AE006FE215 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6142261D27E1AE006FE215 /* AudioKit.framework */; };
-		BF6142281D27E1AE006FE215 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF6142261D27E1AE006FE215 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF61422A1D27E6B8006FE215 /* SoundAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6142291D27E6B8006FE215 /* SoundAnalyzer.swift */; };
 		BF61422C1D27E8E6006FE215 /* DisplayLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61422B1D27E8E6006FE215 /* DisplayLink.swift */; };
 		BF6142321D27F526006FE215 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6142311D27F526006FE215 /* Loop.swift */; };
@@ -27,7 +26,40 @@
 		BF61423B1D281D53006FE215 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61423A1D281D53006FE215 /* FirebaseManager.swift */; };
 		BF61423E1D281E90006FE215 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61423D1D281E90006FE215 /* Command.swift */; };
 		BF6142401D282B09006FE215 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF61423F1D282B09006FE215 /* GoogleService-Info.plist */; };
+		BF61424C1D283B88006FE215 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6142471D283B15006FE215 /* AudioKit.framework */; };
+		BF61424D1D283B88006FE215 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF6142471D283B15006FE215 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF6142461D283B15006FE215 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF6142411D283B15006FE215 /* AudioKit For iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C42F35001C057E03000E937C;
+			remoteInfo = AudioKit;
+		};
+		BF6142481D283B15006FE215 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF6142411D283B15006FE215 /* AudioKit For iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C43792781C0CE2E0001E9160;
+			remoteInfo = AudioKitTests;
+		};
+		BF61424A1D283B4D006FE215 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF6142411D283B15006FE215 /* AudioKit For iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C42F34FF1C057E03000E937C;
+			remoteInfo = AudioKit;
+		};
+		BF61424E1D283B88006FE215 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF6142411D283B15006FE215 /* AudioKit For iOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C42F34FF1C057E03000E937C;
+			remoteInfo = AudioKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		BF61421F1D27E07C006FE215 /* Embed Frameworks */ = {
@@ -36,7 +68,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF6142281D27E1AE006FE215 /* AudioKit.framework in Embed Frameworks */,
+				BF61424D1D283B88006FE215 /* AudioKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +83,7 @@
 		7907E91E1D2820A00035F715 /* BubbleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleNode.swift; sourceTree = "<group>"; };
 		7907E9201D2820DE0035F715 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7907E9241D2833BC0035F715 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
+		790F829E1D284EF2002989B5 /* SoundCommandsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCommandsListController.swift; sourceTree = "<group>"; };
 		8DA30DD82BD55E817DFB7947 /* Pods_Kikimimi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kikimimi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75607DB504E676CC501F75A /* Pods-Kikimimi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikimimi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kikimimi/Pods-Kikimimi.debug.xcconfig"; sourceTree = "<group>"; };
 		BF6141F91D27DC54006FE215 /* Kikimimi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kikimimi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,7 +92,6 @@
 		BF6142061D27DC54006FE215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF6142081D27DC54006FE215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF61420E1D27DC9E006FE215 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		BF6142261D27E1AE006FE215 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
 		BF6142291D27E6B8006FE215 /* SoundAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundAnalyzer.swift; sourceTree = "<group>"; };
 		BF61422B1D27E8E6006FE215 /* DisplayLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLink.swift; sourceTree = "<group>"; };
 		BF6142311D27F526006FE215 /* Loop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
@@ -67,6 +99,7 @@
 		BF61423A1D281D53006FE215 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		BF61423D1D281E90006FE215 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		BF61423F1D282B09006FE215 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BF6142411D283B15006FE215 /* AudioKit For iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "AudioKit For iOS.xcodeproj"; path = "AudioKit/iOS/AudioKit For iOS.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF6142271D27E1AE006FE215 /* AudioKit.framework in Frameworks */,
+				BF61424C1D283B88006FE215 /* AudioKit.framework in Frameworks */,
 				39D84ACC30810058FF65CDF3 /* Pods_Kikimimi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,7 +127,6 @@
 		752664C6D9033A020365130E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF6142261D27E1AE006FE215 /* AudioKit.framework */,
 				8DA30DD82BD55E817DFB7947 /* Pods_Kikimimi.framework */,
 			);
 			name = Frameworks;
@@ -113,6 +145,14 @@
 			path = Visualizer;
 			sourceTree = "<group>";
 		};
+		790F829D1D284EF2002989B5 /* SoundCommandsList */ = {
+			isa = PBXGroup;
+			children = (
+				790F829E1D284EF2002989B5 /* SoundCommandsListController.swift */,
+			);
+			path = SoundCommandsList;
+			sourceTree = "<group>";
+		};
 		BF6141F01D27DC54006FE215 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +160,7 @@
 				BF6141FA1D27DC54006FE215 /* Products */,
 				13692CB9238F71009EA8C0FD /* Pods */,
 				752664C6D9033A020365130E /* Frameworks */,
+				BF6142411D283B15006FE215 /* AudioKit For iOS.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +181,7 @@
 				BF6142331D27F531006FE215 /* SoundAnalyzer */,
 				BF61422B1D27E8E6006FE215 /* DisplayLink.swift */,
 				7907E9171D2818DD0035F715 /* Visualizer */,
+				790F829D1D284EF2002989B5 /* SoundCommandsList */,
 				BF6142031D27DC54006FE215 /* Assets.xcassets */,
 				BF6142051D27DC54006FE215 /* LaunchScreen.storyboard */,
 				BF6142081D27DC54006FE215 /* Info.plist */,
@@ -167,6 +209,15 @@
 			name = Firebase;
 			sourceTree = "<group>";
 		};
+		BF6142421D283B15006FE215 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF6142471D283B15006FE215 /* AudioKit.framework */,
+				BF6142491D283B15006FE215 /* AudioKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -185,6 +236,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				BF61424B1D283B4D006FE215 /* PBXTargetDependency */,
+				BF61424F1D283B88006FE215 /* PBXTargetDependency */,
 			);
 			name = Kikimimi;
 			productName = Kikimimi;
@@ -217,12 +270,35 @@
 			mainGroup = BF6141F01D27DC54006FE215;
 			productRefGroup = BF6141FA1D27DC54006FE215 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BF6142421D283B15006FE215 /* Products */;
+					ProjectRef = BF6142411D283B15006FE215 /* AudioKit For iOS.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				BF6141F81D27DC54006FE215 /* Kikimimi */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BF6142471D283B15006FE215 /* AudioKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AudioKit.framework;
+			remoteRef = BF6142461D283B15006FE215 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BF6142491D283B15006FE215 /* AudioKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AudioKitTests.xctest;
+			remoteRef = BF6142481D283B15006FE215 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BF6141F71D27DC54006FE215 /* Resources */ = {
@@ -298,6 +374,7 @@
 				7907E91B1D2819AD0035F715 /* VisualizerView.swift in Sources */,
 				BF6141FD1D27DC54006FE215 /* AppDelegate.swift in Sources */,
 				7907E9251D2833BC0035F715 /* GCD.swift in Sources */,
+				790F829F1D284EF2002989B5 /* SoundCommandsListController.swift in Sources */,
 				7907E91D1D2819E40035F715 /* VisualizerScene.swift in Sources */,
 				7907E91F1D2820A00035F715 /* BubbleNode.swift in Sources */,
 				BF61420F1D27DC9E006FE215 /* RootViewController.swift in Sources */,
@@ -308,6 +385,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF61424B1D283B4D006FE215 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AudioKit;
+			targetProxy = BF61424A1D283B4D006FE215 /* PBXContainerItemProxy */;
+		};
+		BF61424F1D283B88006FE215 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AudioKit;
+			targetProxy = BF61424E1D283B88006FE215 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BF6142051D27DC54006FE215 /* LaunchScreen.storyboard */ = {
@@ -409,6 +499,7 @@
 			baseConfigurationReference = B75607DB504E676CC501F75A /* Pods-Kikimimi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -426,6 +517,7 @@
 			baseConfigurationReference = 0D2E13707EC13001AFEB3CF6 /* Pods-Kikimimi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

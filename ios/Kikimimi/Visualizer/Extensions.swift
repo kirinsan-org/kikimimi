@@ -8,6 +8,18 @@
 
 import SpriteKit
 
+extension Int {
+	
+	var decreased: Int {
+		return self.advancedBy(-1)
+	}
+	
+	var increased: Int {
+		return self.advancedBy(1)
+	}
+	
+}
+
 extension CGFloat {
 	
 	static func createRandom(`in` interval: ClosedInterval<CGFloat> = 0 ... 1) -> CGFloat {
@@ -51,6 +63,26 @@ extension CGRect {
 	
 	var right: CGFloat {
 		return self.origin.x + self.width
+	}
+	
+}
+
+extension UIColor {
+	
+	convenience init(hexRGBAValue value: Int) {
+		
+		let intRed = (value >> 24) & 0xFF
+		let intGreen = (value >> 16) & 0xFF
+		let intBlue = (value >> 8) & 0xFF
+		let intAlpha = (value >> 0) & 0xFF
+		
+		let red = CGFloat(intRed) / CGFloat(0xFF)
+		let green = CGFloat(intGreen) / CGFloat(0xFF)
+		let blue = CGFloat(intBlue) / CGFloat(0xFF)
+		let alpha = CGFloat(intAlpha) / CGFloat(0xFF)
+		
+		self.init(red: red, green: green, blue: blue, alpha: alpha)
+		
 	}
 	
 }
