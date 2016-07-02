@@ -55,6 +55,26 @@ extension CGRect {
 	
 }
 
+extension UIColor {
+	
+	convenience init(hexRGBAValue value: Int) {
+		
+		let intRed = (value >> 24) & 0xFF
+		let intGreen = (value >> 16) & 0xFF
+		let intBlue = (value >> 8) & 0xFF
+		let intAlpha = (value >> 0) & 0xFF
+		
+		let red = CGFloat(intRed) / CGFloat(0xFF)
+		let green = CGFloat(intGreen) / CGFloat(0xFF)
+		let blue = CGFloat(intBlue) / CGFloat(0xFF)
+		let alpha = CGFloat(intAlpha) / CGFloat(0xFF)
+		
+		self.init(red: red, green: green, blue: blue, alpha: alpha)
+		
+	}
+	
+}
+
 extension SKAction {
 	
 	static func eternalMove(byX x: CGFloat, y: CGFloat) -> SKAction {

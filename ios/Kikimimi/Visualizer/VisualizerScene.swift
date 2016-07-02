@@ -9,7 +9,7 @@
 import SpriteKit
 
 protocol VisualizerSceneDataSource: class {
-	func getFFTSampleArray() -> [Double]
+	func getBubbleSettings() -> [UIColor]
 }
 
 class VisualizerScene: SKScene {
@@ -20,10 +20,11 @@ class VisualizerScene: SKScene {
 		
 		let radius: CGFloat = 50
 		
-		(0 ..< 32).forEach { (_) in
+		let bubbleSettings = self.dataSource?.getBubbleSettings() ?? []
+		bubbleSettings.forEach { (color) in
 			let node = BubbleNode(radius: radius)
 			node.lineWidth = 2
-			node.fillColor = SKColor(red: 0.9, green: 0.2, blue: 0.3, alpha: 0.5)
+			node.fillColor = SKColor(CGColor: color.CGColor)
 			node.strokeColor = .cyanColor()
 			node.position = .createRandom(x: radius ... self.size.width - radius, y: radius ... self.size.height - radius)
 			
