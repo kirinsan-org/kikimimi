@@ -10,11 +10,14 @@ import UIKit
 
 final class SoundCommandEditViewController: UIViewController {
 	var command: Command?
+
 	var recordedFFTData: [FFTData] = []
+	var commandCategory: CommandCategory?
 
 	var contentView: UIView!
 	var categoryIconMessageLabel: UILabel!
 	var categoryIconView: UIImageView!
+	var categoryIconButton: UIButton!
 	var nameField: UITextField!
 	var actionFieldLabel: UILabel!
 	var actionField: UITextField!
@@ -40,6 +43,7 @@ final class SoundCommandEditViewController: UIViewController {
 		categoryIconView.layer.cornerRadius = 60
 		categoryIconView.clipsToBounds = true
 		categoryIconView.image = UIImage(named: CommandCategory.c1.imageName)
+		categoryIconView.userInteractionEnabled = false
 
 		categoryIconMessageLabel = UILabel()
 		categoryIconMessageLabel.bounds = CGRect(x: 0, y: 0, width: contentView.bounds.midX, height: 30)
@@ -47,6 +51,11 @@ final class SoundCommandEditViewController: UIViewController {
 		categoryIconMessageLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
 		categoryIconMessageLabel.textColor = UIColor(white: 0.3, alpha: 1)
 		categoryIconMessageLabel.text = "tap to setting"
+
+		categoryIconButton = UIButton()
+		categoryIconButton.frame = categoryIconView.frame
+		categoryIconButton.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleBottomMargin]
+		categoryIconButton.addTarget(self, action: #selector(SoundCommandEditViewController.selectCategory), forControlEvents: .TouchUpInside)
 
 		nameField = UITextField()
 		nameField.frame = CGRect(x: 0, y: categoryIconView.frame.maxY + 30, width: contentView.bounds.width, height: 50)
@@ -98,7 +107,9 @@ final class SoundCommandEditViewController: UIViewController {
 		view.addSubview(cancelButton)
 		view.addSubview(commitButton)
 
+		contentView.addSubview(categoryIconMessageLabel)
 		contentView.addSubview(categoryIconView)
+		contentView.addSubview(categoryIconButton)
 		contentView.addSubview(nameField)
 		contentView.addSubview(actionFieldLabel)
 		contentView.addSubview(actionField)
@@ -137,6 +148,22 @@ final class SoundCommandEditViewController: UIViewController {
 		center.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
 	}
 
+	func selectCategory() {
+		let categoryController = CategorySelectionViewController()
+		categoryController.title = "画像を選択"
+		categoryController.selectionHandler = { [weak self] category in
+			self?.commandCategory = category
+			self?.categoryIconView.image = UIImage(named: category.imageName)
+			self?.dismissViewControllerAnimated(true, completion: nil)
+		}
+		if let category = command?.category {
+			categoryController.selectedCategory = category
+		}
+
+		let navigationController = UINavigationController(rootViewController: categoryController)
+		presentViewController(navigationController, animated: true, completion: nil)
+	}
+
 	func handleKeyboardWillShowNotification(notification: NSNotification) {
 		let duration = notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
 		let curveValue = notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! UInt
@@ -167,11 +194,16 @@ final class SoundCommandEditViewController: UIViewController {
 
 	func commit() {
 		if let command = command {
-			print("まだ編集できないよ…")
+			let id = command.id
+			let name = nameField.text ?? ""
+			let action = actionField.text ?? ""
+			let category = commandCategory ?? CommandCategory.c1
+			let newCommand = Command(id: id, name: name, action: action, category: category)
+			FirebaseManager.sharedInstance.updateCommand(newCommand)
 		} else {
 			let name = nameField.text ?? ""
 			let action = actionField.text ?? ""
-			let category = CommandCategory.c1
+			let category = commandCategory ?? CommandCategory.c1
 			FirebaseManager.sharedInstance.registerCommand(name, action: action, category: category, recordedData: recordedFFTData)
 		}
 

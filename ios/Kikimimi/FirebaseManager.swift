@@ -82,6 +82,16 @@ final class FirebaseManager {
 		return Command(id: ref.key, name: name, action: action, category: category)
 	}
 
+	func updateCommand(command: Command) {
+		guard let ref = commandRef?.child(command.id) else {
+			fatalError()
+		}
+
+		ref.child("name").setValue(command.name)
+		ref.child("action").setValue(command.action)
+		ref.child("category").setValue(command.category.rawValue)
+	}
+
 	func pushRecordedFFTData(data: FFTData) {
 		deviceRef?.child("recordedData").setValue(data.values)
 	}
