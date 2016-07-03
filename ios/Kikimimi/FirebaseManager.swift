@@ -52,11 +52,12 @@ final class FirebaseManager {
 				let commands = json.flatMap({ (key, value) -> Command? in
 					guard
 						let name = value["name"] as? String,
-						let icon = value["icon"] as? String,
-						let action = value["action"] as? String else {
+						let action = value["action"] as? String,
+						let categoryValue = value["category"] as? Int,
+						let category = CommandCategory(rawValue: categoryValue) else {
 						return nil
 					}
-					return Command(id: key, name: name, icon: icon, action: action)
+					return Command(id: key, name: name, action: action, category: category)
 				})
 				self.commands = commands
 				self.triggerEvent(.CommandListChanged(commands))
@@ -65,27 +66,21 @@ final class FirebaseManager {
 		}
 	}
 
-	func registerCommand(with recordedData: [FFTData], completion: (Command) -> Void) {
+	func registerCommand(name: String, action: String, category: CommandCategory, recordedData: [FFTData]) -> Command {
 		guard let ref = commandRef?.childByAutoId() else {
-			return
+			fatalError()
 		}
+
+		ref.child("name").setValue(name)
+		ref.child("action").setValue(action)
+		ref.child("category").setValue(category.rawValue)
 
 		let audioDataRef = ref.child("audioData")
 		recordedData.forEach { data in
 			audioDataRef.childByAutoId().setValue(data.values)
 		}
 
-		ref.observeEventType(FIRDataEventType.Value, withBlock: { snapshot in
-			guard
-				let value = snapshot.value as? [String : AnyObject],
-				let name = value["name"] as? String,
-				let icon = value["icon"] as? String,
-				let action = value["action"] as? String else {
-					return
-			}
-			let command = Command(id: ref.key, name: name, icon: icon, action: action)
-			completion(command)
-		})
+		return Command(id: ref.key, name: name, action: action, category: category)
 	}
 
 	func pushRecordedFFTData(data: FFTData) {
