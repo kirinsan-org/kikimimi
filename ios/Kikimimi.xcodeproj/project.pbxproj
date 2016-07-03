@@ -15,6 +15,7 @@
 		7907E9211D2820DE0035F715 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907E9201D2820DE0035F715 /* Extensions.swift */; };
 		7907E9251D2833BC0035F715 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907E9241D2833BC0035F715 /* GCD.swift */; };
 		790F829F1D284EF2002989B5 /* SoundCommandsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790F829E1D284EF2002989B5 /* SoundCommandsListController.swift */; };
+		BF4FAEB71D28AD5B0078D850 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FAEB61D28AD5B0078D850 /* CircleButton.swift */; };
 		BF4FAEC21D28B3180078D850 /* CommandCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FAEC11D28B3180078D850 /* CommandCategory.swift */; };
 		BF6141FD1D27DC54006FE215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6141FC1D27DC54006FE215 /* AppDelegate.swift */; };
 		BF6142041D27DC54006FE215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6142031D27DC54006FE215 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		BF6142401D282B09006FE215 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF61423F1D282B09006FE215 /* GoogleService-Info.plist */; };
 		BF61424C1D283B88006FE215 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6142471D283B15006FE215 /* AudioKit.framework */; };
 		BF61424D1D283B88006FE215 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BF6142471D283B15006FE215 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BFF098DF1D2894FC00AA5D38 /* SoundCommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF098DE1D2894FC00AA5D38 /* SoundCommandCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,7 @@
 		790F829E1D284EF2002989B5 /* SoundCommandsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCommandsListController.swift; sourceTree = "<group>"; };
 		8DA30DD82BD55E817DFB7947 /* Pods_Kikimimi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kikimimi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75607DB504E676CC501F75A /* Pods-Kikimimi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikimimi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kikimimi/Pods-Kikimimi.debug.xcconfig"; sourceTree = "<group>"; };
+		BF4FAEB61D28AD5B0078D850 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		BF4FAEC11D28B3180078D850 /* CommandCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandCategory.swift; sourceTree = "<group>"; };
 		BF6141F91D27DC54006FE215 /* Kikimimi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kikimimi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6141FC1D27DC54006FE215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 		BF61423D1D281E90006FE215 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		BF61423F1D282B09006FE215 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF6142411D283B15006FE215 /* AudioKit For iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "AudioKit For iOS.xcodeproj"; path = "AudioKit/iOS/AudioKit For iOS.xcodeproj"; sourceTree = "<group>"; };
+		BFF098DE1D2894FC00AA5D38 /* SoundCommandCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCommandCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				790F829E1D284EF2002989B5 /* SoundCommandsListController.swift */,
+				BFF098DE1D2894FC00AA5D38 /* SoundCommandCell.swift */,
+				BF4FAEB61D28AD5B0078D850 /* CircleButton.swift */,
 			);
 			path = SoundCommandsList;
 			sourceTree = "<group>";
@@ -371,6 +377,7 @@
 			files = (
 				BF6142321D27F526006FE215 /* Loop.swift in Sources */,
 				BF61422C1D27E8E6006FE215 /* DisplayLink.swift in Sources */,
+				BF4FAEB71D28AD5B0078D850 /* CircleButton.swift in Sources */,
 				BF61422A1D27E6B8006FE215 /* SoundAnalyzer.swift in Sources */,
 				BF61423B1D281D53006FE215 /* FirebaseManager.swift in Sources */,
 				BF6142391D281C3C006FE215 /* FFTData.swift in Sources */,
@@ -378,6 +385,7 @@
 				BF6141FD1D27DC54006FE215 /* AppDelegate.swift in Sources */,
 				7907E9251D2833BC0035F715 /* GCD.swift in Sources */,
 				790F829F1D284EF2002989B5 /* SoundCommandsListController.swift in Sources */,
+				BFF098DF1D2894FC00AA5D38 /* SoundCommandCell.swift in Sources */,
 				7907E91D1D2819E40035F715 /* VisualizerScene.swift in Sources */,
 				7907E91F1D2820A00035F715 /* BubbleNode.swift in Sources */,
 				BF61420F1D27DC9E006FE215 /* RootViewController.swift in Sources */,
