@@ -33,6 +33,15 @@ class RootViewController: UIViewController {
 				break
 			}
 		}
+
+		FirebaseManager.sharedInstance.observerEvent { [weak controller] event in
+			switch event {
+			case .DetectedCommandChanged(let command):
+				controller?.fireCommand(command)
+			default:
+				break
+			}
+		}
 	}
 
 }
