@@ -11,8 +11,8 @@ import Foundation
 struct Command {
 	let id: String
 	let name: String
-	let icon: String
 	let action: String
+	let category: CommandCategory
 }
 
 func ==(lhs: Command, rhs: Command) -> Bool {
