@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "spajam2016-kirinsan-org",
+  "private_key_id": "3ceca6c34b023956d1c0adf285bc4aa6d6892647",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCPvNMrepwRDZJ9\nrrUnSZJgcfZoiZpmpnWT7xuy9nQAiteTZwopGnA5UjbONL3Mxb0BHqVteW00GhZw\nboRMF/A8uKg2kgUBlZxYjk2LutVHcJaJacwBI7eAtATOjVpGldocvzqutc2du43v\n/FOlz7EK2FPJv/d7Igg2/CveOu7xd7QkQEUcl9StX0OZnzDhyW6Hd/Nk8TUIPbos\nVPi5QFdSafRsM720rugzAYkH8SppJjlfSGFS5QEv0Wv2e0Ww2OcrJaNrCZGhFt3+\nA7ijSH7zQ/SL2KCrWFMBuJzMiYs99r2Fm5IJLXx8tlHl5IiiShTXfpJLGDpJwMit\nLNwnr7wbAgMBAAECggEAQUgMTJH6MdCNOOHRSs+iWIVJ2X6tjnOJsS+G0AgY9WoZ\nsMu6lKJ6V75cP9k6XrdsOQb3MTpV+7Thfhzjnz+8D4f6dhZpiaeug5XV6GFpnnGn\nHS/cxKO5Iw4fpMQUPTyv/CBqAZF2mm3lcBqUzxj+GqPXoii6uMTjID31mo//l9EM\nrkL8GPGqxWXJGaQr803fKf6k5FLQKzTA2OVT1cRXGu7enyyOmunch/frlcXsdPUj\noEZJRHPIfm4hH5LVcnIHlEjIFSSben4W4wNE1vvEWOExIh3OMB3VauXiBIlJ68am\n4r1fdgMk0sYFmumYSzVzK0ZnTRz0N/oKyrWME0KMeQKBgQDH5L4YYzbQTmFlNr14\nMIKkAKj/gtbIzMK4LmNYz5hkCexwVh+bxR/BnMmFBh2nmj24qWIsaEQxTFz56XW3\nlSZ0DPKOEFRPtPylEALWTt22esnA1ic4d1L/j/+E3O0HuzVMaTXvhap6mM4Ao0Q4\n/mWP+aGstO/H1pigakFIMAQK1QKBgQC4FQYdcyxmgSqE72xrgXMUqnONz3E1URGm\nD+IngIT/hzlb9HlhyIrYt6vyyolYWPqTkX5DNFyQ4L2DKQRyCHhrplzhM0bGrpFu\n+cSTxMwdSzc+0bbxetAidPi0fbN02sdnsJW+1SCS34FYtYNBkjY481niy6TCQaG6\n8KJlfaxDLwKBgD5LgxKGmOaCBshMLu/t7ki+C+zVEaqyZVyQ2FUtHQjQLuczb9ZT\nsHneKs9SAJvi7alG4FmGhPn4GmGn6A+2Y612+4Bahmvws2udecTf/yiHS6jVFJP8\nW9lZPwBg+V2XchzGDREATwi15j08pF4+qdgcq83u9WsJ7bbQZlfg3uGhAoGBAKEM\nu7nePtU7YnDFa4yux3koG0rRV5E26QLpWIoI1dMdgmBiBiQ3qMor/0K+UeU6i5e5\nrcasM+QIy6TJqPr/UCOWfCIGk4BV0CVQXdyOS6nBWYcbQTwJn7jVr5VxeCTfF6Av\nDQPVQNdetbJfs4MVoVy4A0b5tZ7CfvWne9zhU2m/AoGBAJPobDOFwS9Kj1i56hZp\n6OUs5jIaK9ipOn2wIohsJWXinTGDbC1GWy1YAmn0MxzaObUOd6AQ81pmfdRQXunm\nPNlTZ/cEuubdwkLOVrQjwQ/O/bsjWwNCnGmmo6mcnxtuC9gP/BM5F1av0PsWspzk\nY3koo4DQzBucSUCuNsXpBgCE\n-----END PRIVATE KEY-----\n",
+  "client_email": "kikimimi-node@spajam2016-kirinsan-org.iam.gserviceaccount.com",
+  "client_id": "106083027309663714246",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/kikimimi-node%40spajam2016-kirinsan-org.iam.gserviceaccount.com"
+}

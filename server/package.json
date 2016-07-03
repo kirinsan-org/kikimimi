@@ -1,0 +1,21 @@
+{
+  "name": "spajam-2016-kirinsan.org",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "compute-cosine-similarity": "^1.0.0",
+    "firebase": "^3.1.0",
+    "request-promise": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main"
+  },
+  "author": "",
+  "license": "ISC"
+}
