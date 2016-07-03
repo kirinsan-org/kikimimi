@@ -16,8 +16,6 @@ class VisualizerViewController: UIViewController {
 	
 	private let visualizerView: VisualizerView
 	
-	private let databaseManager: FirebaseManager
-	
 	private let bubbleColors: [(fillColor: UIColor, strokeColor: UIColor)]
 	
 	weak var dataSource: VisualizerViewControllerDataSource?
@@ -25,8 +23,6 @@ class VisualizerViewController: UIViewController {
 	init(visualizerView view: VisualizerView? = nil) {
 		
 		self.visualizerView = view ?? VisualizerView()
-		
-		self.databaseManager = FirebaseManager.sharedInstance
 		
 		let colorStrings = [
 			["ff002a","ff002a"],
@@ -114,8 +110,6 @@ class VisualizerViewController: UIViewController {
 		commandListButton.addTarget(self, action: #selector(VisualizerViewController.presentCommandList), forControlEvents: .TouchUpInside)
 		view.addSubview(commandListButton)
 		
-		observeDatabase()
-		
 	}
 	
 	override func viewWillAppear(animated: Bool) {
@@ -142,20 +136,6 @@ class VisualizerViewController: UIViewController {
 		let navigationController = UINavigationController(rootViewController: listController)
 		navigationController.navigationBarHidden = true
 		presentViewController(navigationController, animated: true, completion: nil)
-	}
-	
-	func observeDatabase() {
-		
-		self.databaseManager.observerEvent { (event) in
-			switch event {
-			case .CommandListChanged:
-				break
-				
-			case .DetectedCommandChanged(let command):
-				self.fireCommand(command)
-			}
-		}
-		
 	}
 	
 }

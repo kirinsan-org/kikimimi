@@ -38,7 +38,10 @@ class RootViewController: UIViewController {
 		FirebaseManager.sharedInstance.observerEvent { [weak controller] event in
 			switch event {
 			case .DetectedCommandChanged(let command):
-				controller?.fireCommand(command)
+				controller?.fireCommand(command) {
+					FirebaseManager.sharedInstance.resetDetectedCommand()
+				}
+				
 			default:
 				break
 			}
