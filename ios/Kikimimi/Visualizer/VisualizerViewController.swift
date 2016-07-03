@@ -16,6 +16,8 @@ class VisualizerViewController: UIViewController {
 	
 	private let visualizerView: VisualizerView
 	
+	private let databaseManager: FirebaseManager
+	
 	private let bubbleColors: [(fillColor: UIColor, strokeColor: UIColor)]
 	
 	weak var dataSource: VisualizerViewControllerDataSource?
@@ -23,6 +25,9 @@ class VisualizerViewController: UIViewController {
 	init(visualizerView view: VisualizerView? = nil) {
 		
 		self.visualizerView = view ?? VisualizerView()
+		
+		self.databaseManager = FirebaseManager.sharedInstance
+		
 		let colorStrings = [
 			["ff002a","ff002a"],
 			["ff2f00","ff2f00"],
@@ -103,6 +108,16 @@ class VisualizerViewController: UIViewController {
 		scene.scaleMode = .AspectFill
 		visualizerView.presentScene(scene)
 		
+		self.databaseManager.observerEvent { (event) in
+			switch event {
+			case .CommandListChanged:
+				break
+				
+			case .DetectedCommandChanged(let command):
+				self.fireCommand(command)
+			}
+		}
+		
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -119,7 +134,7 @@ class VisualizerViewController: UIViewController {
 extension VisualizerViewController {
 	
 	func fireCommand(command: Command) {
-		
+		print(command)
 	}
 	
 }
