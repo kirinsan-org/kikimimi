@@ -56,7 +56,7 @@ final class SoundAnalyzer {
 
 		loop = Loop(frequency: 44100, handler: { [unowned self] in
 			let rawData = self.fft.fftData
-			let fftData = FFTData(values: Array(rawData[0...(rawData.count-1)]))
+			let fftData = FFTData(values: Array(rawData[0...(rawData.count / 2 - 1)]))
 			let amplitude = self.amplitudeTracker.amplitude
 
 			self.streamingFFTData.append(fftData)
