@@ -170,7 +170,7 @@ class VisualizerScene: SKScene {
 		
 	}
 	
-	func presentCommandIconSprite(sprite: SKSpriteNode) {
+	func presentCommandIconSprite(sprite: SKSpriteNode, completion completionHandler: (() -> Void)?) {
 		
 		var sprites = [Int](1 ... 4).map { (i) -> SKNode in
 			let dummy = SKShapeNode(circleOfRadius: CGFloat(i) * 10)
@@ -200,7 +200,11 @@ class VisualizerScene: SKScene {
 			let fadeAction = SKAction.sequence([delayAction, fadeinAction, waitingAction, fadeoutAction])
 			let moveAction = SKAction.moveByX(0, y: 200, duration: 4)
 			let action = SKAction.group([fadeAction, moveAction])
-			node.runAction(action)
+			node.runAction(action) {
+				if i == sprites.count.decreased {
+					completionHandler?()
+				}
+			}
 		}
 		
 	}
