@@ -158,7 +158,9 @@ class VisualizerScene: SKScene {
 						self.addChild(node)
 						
 						let action = SKAction.fadeAlphaTo(0, duration: 1)
-						node.runAction(action)
+						node.runAction(action) {
+							node.removeFromParent()
+						}
 					}
 				}
 			} else {
