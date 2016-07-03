@@ -69,12 +69,14 @@ final class SoundAnalyzer {
 				print(String(format: "%0.2f%%", Float(self.recordingFFTData.count) / Float(self.recordingFFTDataCapacity) * 100))
 				if self.recordingFFTData.count >= self.recordingFFTDataCapacity {
 					let count = fftData.values.count
-					var averageValues = Array<Double>(count: count, repeatedValue: 0)
+//					var averageValues = Array<Double>(count: count, repeatedValue: 0)
+					var maxValues = Array<Double>(count: count, repeatedValue: 0)
 					for i in 0..<count {
 						let values = self.recordingFFTData.map({ $0.values[i] })
-						averageValues[i] = values.reduce(0, combine: { $0 + $1 }) / count
+//						averageValues[i] = values.reduce(0, combine: { $0 + $1 }) / count
+						maxValues[i] = values.maxElement()!
 					}
-					let optimizedFFTData = FFTData(values: averageValues).normalized
+					let optimizedFFTData = FFTData(values: maxValues).normalized
 					self.recordingFFTData.removeAll()
 					self.isRecording = false
 					self.triggerEvent(.StopRecording(optimizedFFTData: optimizedFFTData))
