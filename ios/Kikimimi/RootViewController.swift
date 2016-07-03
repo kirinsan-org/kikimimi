@@ -18,9 +18,10 @@ class RootViewController: UIViewController {
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
-		
+
 		let controller = VisualizerViewController()
 		controller.dataSource = self
+		
 		self.addChildViewController(controller)
 		self.view.addSubview(controller.view)
 		controller.didMoveToParentViewController(self)
@@ -43,6 +44,10 @@ class RootViewController: UIViewController {
 			}
 		}
 	}
+
+//	override func preferredStatusBarStyle() -> UIStatusBarStyle {
+//		return .LightContent
+//	}
 
 }
 
