@@ -163,7 +163,15 @@ class VisualizerViewController: UIViewController {
 extension VisualizerViewController {
 	
 	func fireCommand(command: Command) {
-		print(command)
+		
+		let imageName = command.category.imageName
+		if let image = UIImage(named: imageName), scene = self.visualizerView.scene as? VisualizerScene {
+			let icon = image.roundedImage
+			let texture = SKTexture(image: icon)
+			let sprite = SKSpriteNode(texture: texture)
+			scene.presentCommandIconSprite(sprite)
+		}
+		
 	}
 	
 }
