@@ -38,9 +38,10 @@ final class FFTGraphView: UIView {
 		path.moveToPoint(CGPoint(x: bounds.minX, y: bounds.midY))
 
 		if let data = fftData {
-			let interval = bounds.width / CGFloat(data.values.count)
+			let values = data.values[0...96]
+			let interval = bounds.width / CGFloat(values.count)
 			let maxHeight = bounds.height / 2
-			for (i, value) in data.values.enumerate() {
+			for (i, value) in values.enumerate() {
 				let point = CGPoint(x: interval * CGFloat(i), y: bounds.midY - maxHeight * CGFloat(value / 1))
 				path.addLineToPoint(point)
 			}
