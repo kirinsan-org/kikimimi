@@ -38,6 +38,7 @@ final class SoundCommandEditViewController: UIViewController {
 		categoryIconView.layer.borderWidth = 5
 		categoryIconView.layer.borderColor = UIColor.whiteColor().CGColor
 		categoryIconView.layer.cornerRadius = 60
+		categoryIconView.clipsToBounds = true
 		categoryIconView.image = UIImage(named: CommandCategory.c1.imageName)
 
 		categoryIconMessageLabel = UILabel()
@@ -57,6 +58,8 @@ final class SoundCommandEditViewController: UIViewController {
 		nameField.delegate = self
 		nameField.autocorrectionType = .No
 		nameField.returnKeyType = .Done
+		nameField.clipsToBounds = true
+		nameField.layer.cornerRadius = 4
 
 		actionFieldLabel = UILabel()
 		actionFieldLabel.frame = CGRect(x: 0, y: nameField.frame.maxY + 30, width: contentView.bounds.width, height: 12)
@@ -86,7 +89,7 @@ final class SoundCommandEditViewController: UIViewController {
 		cancelButton.backgroundColor = UIColor(hue:0.95, saturation:0.94, brightness:0.89, alpha:1)
 		cancelButton.addTarget(self, action: #selector(SoundCommandEditViewController.cancel), forControlEvents: .TouchUpInside)
 
-		commitButton = CircleButton(imageName: "")
+		commitButton = CircleButton(imageName: "btn_ok")
 		commitButton.center = CGPoint(x: view.bounds.midX + 30, y: view.bounds.maxY - 38)
 		commitButton.backgroundColor = UIColor(hue:0.39, saturation:0.82, brightness:0.84, alpha:1)
 		commitButton.addTarget(self, action: #selector(SoundCommandEditViewController.commit), forControlEvents: .TouchUpInside)
