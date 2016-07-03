@@ -4,7 +4,6 @@ const request = require('request-promise');
 
 import {Statistics} from './Statistics'
 import {CommandSet} from './CommandSet'
-import {Similarity} from './Similarity'
 import {Device} from './Device'
 
 firebase.initializeApp({
@@ -13,7 +12,6 @@ firebase.initializeApp({
 });
 
 export class App {
-  // private static thresholdSimilarity = 0.7;
   private command: CommandSet;
   private db;
 
@@ -62,8 +60,6 @@ export class App {
     if (!this.command) return null;
 
     // 候補をピックアップ
-    let firstCandidates: Similarity[] = [];
-    let others: Similarity[] = [];
     let statistics: Statistics = {
       average: 0,
       max: 0,
@@ -93,8 +89,6 @@ export class App {
         statistics.min = Math.min(statistics.min, similarity);
         sum += similarity;
         count++;
-
-        firstCandidates.push(new Similarity(id, similarity));
       }
     }
 
