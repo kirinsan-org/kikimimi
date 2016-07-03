@@ -15,10 +15,11 @@
 		7907E9211D2820DE0035F715 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907E9201D2820DE0035F715 /* Extensions.swift */; };
 		7907E9251D2833BC0035F715 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7907E9241D2833BC0035F715 /* GCD.swift */; };
 		790F829F1D284EF2002989B5 /* SoundCommandsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790F829E1D284EF2002989B5 /* SoundCommandsListController.swift */; };
-		BF4FAEB71D28AD5B0078D850 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FAEB61D28AD5B0078D850 /* CircleButton.swift */; };
-		BF4FAEC21D28B3180078D850 /* CommandCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FAEC11D28B3180078D850 /* CommandCategory.swift */; };
 		790F82A81D28A669002989B5 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 790F82A61D28A669002989B5 /* spark.sks */; };
 		790F82A91D28A669002989B5 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 790F82A71D28A669002989B5 /* spark.png */; };
+		BF4FAEB71D28AD5B0078D850 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FAEB61D28AD5B0078D850 /* CircleButton.swift */; };
+		BF4FAEC21D28B3180078D850 /* CommandCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FAEC11D28B3180078D850 /* CommandCategory.swift */; };
+		BF4FAEC81D28BC940078D850 /* SoundCommandRecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FAEC71D28BC940078D850 /* SoundCommandRecordingViewController.swift */; };
 		BF4FAECB1D28BCE30078D850 /* FFTGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FAECA1D28BCE30078D850 /* FFTGraphView.swift */; };
 		BF6141FD1D27DC54006FE215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6141FC1D27DC54006FE215 /* AppDelegate.swift */; };
 		BF6142041D27DC54006FE215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6142031D27DC54006FE215 /* Assets.xcassets */; };
@@ -96,6 +97,7 @@
 		B75607DB504E676CC501F75A /* Pods-Kikimimi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikimimi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kikimimi/Pods-Kikimimi.debug.xcconfig"; sourceTree = "<group>"; };
 		BF4FAEB61D28AD5B0078D850 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		BF4FAEC11D28B3180078D850 /* CommandCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandCategory.swift; sourceTree = "<group>"; };
+		BF4FAEC71D28BC940078D850 /* SoundCommandRecordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCommandRecordingViewController.swift; sourceTree = "<group>"; };
 		BF4FAECA1D28BCE30078D850 /* FFTGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFTGraphView.swift; sourceTree = "<group>"; };
 		BF6141F91D27DC54006FE215 /* Kikimimi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kikimimi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6141FC1D27DC54006FE215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				790F829E1D284EF2002989B5 /* SoundCommandsListController.swift */,
 				BFF098DE1D2894FC00AA5D38 /* SoundCommandCell.swift */,
+				BF4FAEC71D28BC940078D850 /* SoundCommandRecordingViewController.swift */,
 				BF4FAECA1D28BCE30078D850 /* FFTGraphView.swift */,
 				BF4FAEB61D28AD5B0078D850 /* CircleButton.swift */,
 			);
@@ -393,6 +396,7 @@
 				BF61422A1D27E6B8006FE215 /* SoundAnalyzer.swift in Sources */,
 				BF61423B1D281D53006FE215 /* FirebaseManager.swift in Sources */,
 				BF6142391D281C3C006FE215 /* FFTData.swift in Sources */,
+				BF4FAEC81D28BC940078D850 /* SoundCommandRecordingViewController.swift in Sources */,
 				7907E91B1D2819AD0035F715 /* VisualizerView.swift in Sources */,
 				BF6141FD1D27DC54006FE215 /* AppDelegate.swift in Sources */,
 				7907E9251D2833BC0035F715 /* GCD.swift in Sources */,
