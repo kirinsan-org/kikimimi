@@ -108,6 +108,44 @@ class VisualizerViewController: UIViewController {
 		scene.scaleMode = .AspectFill
 		visualizerView.presentScene(scene)
 		
+		let commandListButton = CircleButton(imageName: "ic_list_white")
+		commandListButton.bounds = CGRect(x: 0, y: 0, width: 44, height: 44)
+		commandListButton.center = CGPoint(x: view.bounds.midX, y: view.bounds.maxY - (13 + 44 / 2))
+		commandListButton.addTarget(self, action: #selector(VisualizerViewController.presentCommandList), forControlEvents: .TouchUpInside)
+		view.addSubview(commandListButton)
+		
+		observeDatabase()
+		
+	}
+	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		visualizerView.scene?.paused = false
+	}
+	
+	override func viewDidDisappear(animated: Bool) {
+		super.viewDidDisappear(animated)
+		visualizerView.scene?.paused = true
+	}
+	
+	override func didReceiveMemoryWarning() {
+		super.didReceiveMemoryWarning()
+		// Dispose of any resources that can be recreated.
+	}
+	
+	override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+		return [.Portrait, .PortraitUpsideDown]
+	}
+
+	func presentCommandList() {
+		let listController = SoundCommandsListController()
+		let navigationController = UINavigationController(rootViewController: listController)
+		navigationController.navigationBarHidden = true
+		presentViewController(navigationController, animated: true, completion: nil)
+	}
+	
+	func observeDatabase() {
+		
 		self.databaseManager.observerEvent { (event) in
 			switch event {
 			case .CommandListChanged:
@@ -118,15 +156,6 @@ class VisualizerViewController: UIViewController {
 			}
 		}
 		
-	}
-	
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-	
-	override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-		return [.Portrait, .PortraitUpsideDown]
 	}
 	
 }
