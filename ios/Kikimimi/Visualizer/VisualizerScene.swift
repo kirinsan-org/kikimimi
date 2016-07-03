@@ -206,6 +206,7 @@ class VisualizerScene: SKScene {
 				if i == sprites.count.decreased {
 					completionHandler?()
 				}
+				node.removeFromParent()
 			}
 		}
 		
