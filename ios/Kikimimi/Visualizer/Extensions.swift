@@ -25,8 +25,8 @@ extension CGFloat {
 	static func createRandom(`in` interval: ClosedInterval<CGFloat> = 0 ... 1) -> CGFloat {
 		
 		let intervalWidth = interval.end - interval.start
-		let randomUInt32 = arc4random()
-		let random = CGFloat(randomUInt32) / CGFloat(UInt32.max)
+		let randomUInt32 = arc4random_uniform(1024)
+		let random = CGFloat(randomUInt32) / CGFloat(1024)
 		
 		return random * intervalWidth + interval.start
 		
