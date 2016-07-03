@@ -38,9 +38,11 @@ class SoundCommandsListController: UIViewController {
 		addButton = CircleButton(imageName: "ic_add_white")
 		addButton.center = CGPoint(x: view.bounds.maxX - (12 + 44 / 2), y: view.bounds.maxY - (12 + 44 / 2))
 		addButton.backgroundColor = UIColor(hue:0.04, saturation:0.88, brightness:0.99, alpha:1)
+		addButton.addTarget(self, action: #selector(SoundCommandsListController.add), forControlEvents: .TouchUpInside)
 
 		backButton = CircleButton(imageName: "ic_arrow_back_white")
 		backButton.center = CGPoint(x: addButton.frame.minX - (8 + 44 / 2), y: addButton.center.y)
+		backButton.addTarget(self, action: #selector(SoundCommandsListController.back), forControlEvents: .TouchUpInside)
 
 		view.addSubview(backButton)
 		view.addSubview(addButton)
@@ -74,6 +76,15 @@ class SoundCommandsListController: UIViewController {
 
 	override func preferredStatusBarStyle() -> UIStatusBarStyle {
 		return .LightContent
+	}
+
+	func back() {
+		self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+	}
+
+	func add() {
+		let controller = SoundCommandRecordingViewController()
+		navigationController?.pushViewController(controller, animated: true)
 	}
 	
 }

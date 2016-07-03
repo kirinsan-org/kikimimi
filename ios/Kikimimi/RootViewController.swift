@@ -18,9 +18,10 @@ class RootViewController: UIViewController {
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
-		
+
 		let controller = VisualizerViewController()
 		controller.dataSource = self
+		
 		self.addChildViewController(controller)
 		self.view.addSubview(controller.view)
 		controller.didMoveToParentViewController(self)
@@ -33,7 +34,20 @@ class RootViewController: UIViewController {
 				break
 			}
 		}
+
+		FirebaseManager.sharedInstance.observerEvent { [weak controller] event in
+			switch event {
+			case .DetectedCommandChanged(let command):
+				controller?.fireCommand(command)
+			default:
+				break
+			}
+		}
 	}
+
+//	override func preferredStatusBarStyle() -> UIStatusBarStyle {
+//		return .LightContent
+//	}
 
 }
 

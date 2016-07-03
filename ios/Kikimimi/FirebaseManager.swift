@@ -35,11 +35,17 @@ final class FirebaseManager {
 
 			let deviceRef = FIRDatabase.database().referenceWithPath("device/\(id)")
 			deviceRef.child("detectedCommand").observeEventType(FIRDataEventType.Value, withBlock: { snapshot in
-				guard let json = snapshot.value as? [String : AnyObject] else {
+				guard let id = snapshot.value as? String else {
 					print("Invalid value for \(snapshot.ref.URL)")
 					return
 				}
-				print("detectedCommand changed \(json)")
+				let ref = self.commandRef!.child(id)
+				ref.observeEventType(FIRDataEventType.Value, withBlock: { snapshot in
+					guard let json = snapshot.value as? [String : AnyObject], let command = Command(id: id, json: json) else {
+						return
+					}
+					self.triggerEvent(.DetectedCommandChanged(command))
+				})
 			})
 			self.deviceRef = deviceRef
 
@@ -50,14 +56,7 @@ final class FirebaseManager {
 					return
 				}
 				let commands = json.flatMap({ (key, value) -> Command? in
-					guard
-						let name = value["name"] as? String,
-						let action = value["action"] as? String,
-						let categoryValue = value["category"] as? Int,
-						let category = CommandCategory(rawValue: categoryValue) else {
-						return nil
-					}
-					return Command(id: key, name: name, action: action, category: category)
+					return Command(id: key, json: value)
 				})
 				self.commands = commands
 				self.triggerEvent(.CommandListChanged(commands))
@@ -93,5 +92,18 @@ final class FirebaseManager {
 
 	private func triggerEvent(event: Event) {
 		eventObservers.forEach({ $0(event) })
+	}
+}
+
+extension Command {
+	init?(id: String, json: [String : AnyObject]) {
+		guard
+			let name = json["name"] as? String,
+			let action = json["action"] as? String,
+			let categoryValue = json["category"] as? Int,
+			let category = CommandCategory(rawValue: categoryValue) else {
+				return nil
+		}
+		self = Command(id: id, name: name, action: action, category: category)
 	}
 }
