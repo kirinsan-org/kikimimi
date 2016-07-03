@@ -47,27 +47,17 @@ class SoundCommandsListController: UIViewController {
 		view.addSubview(backButton)
 		view.addSubview(addButton)
 
-//		FirebaseManager.sharedInstance.observerEvent { [weak self] event in
-//			switch event {
-//			case .CommandListChanged(let commands):
-//				self?.commands = commands
-//			default:
-//				break
-//			}
-//		}
+		let firebaseManager = FirebaseManager.sharedInstance
+		firebaseManager.observerEvent { [weak self] event in
+			switch event {
+			case .CommandListChanged(let commands):
+				self?.commands = commands
+			default:
+				break
+			}
+		}
 
-		let dummyCommands = [
-			Command(id: "dummy1", name: "とてもおいしいモンテール", action: "", category: CommandCategory(rawValue: 1)!),
-			Command(id: "dummy2", name: "ヨハネちゃんかわいい", action: "", category: CommandCategory(rawValue: 2)!),
-			Command(id: "dummy3", name: "とてもおいしいモンテール", action: "", category: CommandCategory(rawValue: 3)!),
-			Command(id: "dummy4", name: "ヨハネちゃんかわいい", action: "", category: CommandCategory(rawValue: 4)!),
-			Command(id: "dummy5", name: "とてもおいしいモンテール", action: "", category: CommandCategory(rawValue: 5)!),
-			Command(id: "dummy6", name: "ヨハネちゃんかわいい", action: "", category: CommandCategory(rawValue: 6)!),
-			Command(id: "dummy7", name: "とてもおいしいモンテール", action: "", category: CommandCategory(rawValue: 7)!),
-			Command(id: "dummy8", name: "ヨハネちゃんかわいい", action: "", category: CommandCategory(rawValue: 8)!),
-			Command(id: "dummy9", name: "とてもおいしいモンテール", action: "", category: CommandCategory(rawValue: 9)!)
-		]
-		self.commands = dummyCommands
+		self.commands = firebaseManager.commands
 	}
 	
 	override func didReceiveMemoryWarning() {
