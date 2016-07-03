@@ -87,6 +87,23 @@ extension UIColor {
 	
 }
 
+extension UIImage {
+	
+	var roundedImage: UIImage {
+		
+		UIGraphicsBeginImageContextWithOptions(self.size, false, 1.0);
+		UIBezierPath(roundedRect: CGRect(origin: .zero, size: self.size), cornerRadius:min(self.size.width, self.size.height) / 2).addClip()
+		self.drawInRect(CGRect(origin: .zero, size: self.size))
+		
+		let finalImage = UIGraphicsGetImageFromCurrentImageContext()
+		UIGraphicsEndImageContext()
+		
+		return finalImage
+		
+	}
+	
+}
+
 extension SKAction {
 	
 	static func eternalMove(byX x: CGFloat, y: CGFloat) -> SKAction {

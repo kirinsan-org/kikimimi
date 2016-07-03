@@ -148,7 +148,7 @@ class VisualizerScene: SKScene {
 				let action = SKAction.scaleTo(scale, duration: 0.2)
 				bubble.runAction(action)
 				
-				if scale > 0.8 {
+				if scale > 0.75 {
 					if let node = SKEmitterNode(fileNamed: "spark.sks") {
 						node.particleBirthRate = 200
 						node.numParticlesToEmit = 40
@@ -158,7 +158,9 @@ class VisualizerScene: SKScene {
 						self.addChild(node)
 						
 						let action = SKAction.fadeAlphaTo(0, duration: 1)
-						node.runAction(action)
+						node.runAction(action) {
+							node.removeFromParent()
+						}
 					}
 				}
 			} else {
@@ -167,6 +169,46 @@ class VisualizerScene: SKScene {
 			}
 			
 		})
+		
+	}
+	
+	func presentCommandIconSprite(sprite: SKSpriteNode, completion completionHandler: (() -> Void)?) {
+		
+		var sprites = [Int](1 ... 4).map { (i) -> SKNode in
+			let dummy = SKShapeNode(circleOfRadius: CGFloat(i) * 10)
+			dummy.fillColor = .whiteColor()
+			dummy.zPosition = 100
+			return dummy
+		}
+		
+		sprite.zPosition = 100
+		sprite.setScale(150 / max(sprite.size.width, sprite.size.height))
+		sprites.append(sprite)
+		
+		let xs: [CGFloat] = [20, -20, 20, -20, 0]
+		let ys: [CGFloat] = [30, 70, 130, 210, 340]
+		
+		let fadeinAction = SKAction.fadeInWithDuration(0.3)
+		let waitingAction = SKAction.waitForDuration(1.4)
+		let fadeoutAction = SKAction.fadeOutWithDuration(0.3)
+		sprites.enumerate().reverse().forEach { (i, node) in
+			let x = (self.frame.width / 2) + xs[i]
+			let y = 50 + ys[i]
+			node.position = CGPoint(x: x, y: y)
+			node.alpha = 0
+			self.addChild(node)
+			
+			let delayAction = SKAction.waitForDuration(NSTimeInterval(i) * 0.2)
+			let fadeAction = SKAction.sequence([delayAction, fadeinAction, waitingAction, fadeoutAction])
+			let moveAction = SKAction.moveByX(0, y: 200, duration: 4)
+			let action = SKAction.group([fadeAction, moveAction])
+			node.runAction(action) {
+				if i == sprites.count.decreased {
+					completionHandler?()
+				}
+				node.removeFromParent()
+			}
+		}
 		
 	}
 	

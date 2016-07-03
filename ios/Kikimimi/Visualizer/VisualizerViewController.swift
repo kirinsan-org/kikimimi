@@ -23,6 +23,7 @@ class VisualizerViewController: UIViewController {
 	init(visualizerView view: VisualizerView? = nil) {
 		
 		self.visualizerView = view ?? VisualizerView()
+		
 		let colorStrings = [
 			["ff002a","ff002a"],
 			["ff2f00","ff2f00"],
@@ -102,19 +103,20 @@ class VisualizerViewController: UIViewController {
 		visualizerView.backgroundColor = .whiteColor()
 		scene.scaleMode = .AspectFill
 		visualizerView.presentScene(scene)
-
+		
 		let commandListButton = CircleButton(imageName: "ic_list_white")
 		commandListButton.bounds = CGRect(x: 0, y: 0, width: 44, height: 44)
 		commandListButton.center = CGPoint(x: view.bounds.midX, y: view.bounds.maxY - (13 + 44 / 2))
 		commandListButton.addTarget(self, action: #selector(VisualizerViewController.presentCommandList), forControlEvents: .TouchUpInside)
 		view.addSubview(commandListButton)
+		
 	}
-
+	
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 		visualizerView.scene?.paused = false
 	}
-
+	
 	override func viewDidDisappear(animated: Bool) {
 		super.viewDidDisappear(animated)
 		visualizerView.scene?.paused = true
@@ -135,11 +137,20 @@ class VisualizerViewController: UIViewController {
 		navigationController.navigationBarHidden = true
 		presentViewController(navigationController, animated: true, completion: nil)
 	}
+	
 }
 
 extension VisualizerViewController {
 	
-	func fireCommand(command: Command) {
+	func fireCommand(command: Command, completion completionHandler: (() -> Void)? = nil) {
+		
+		let imageName = command.category.imageName
+		if let image = UIImage(named: imageName), scene = self.visualizerView.scene as? VisualizerScene {
+			let icon = image.roundedImage
+			let texture = SKTexture(image: icon)
+			let sprite = SKSpriteNode(texture: texture)
+			scene.presentCommandIconSprite(sprite, completion: completionHandler)
+		}
 		
 	}
 	
