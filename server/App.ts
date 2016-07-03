@@ -22,8 +22,6 @@ export class App {
 
   exec() {
 
-    this.db.ref('device').onDisconnect().remove();
-
     // コマンド一覧を取得
     this.db.ref('command').on('value', (snapshot) => {
       this.command = snapshot.val();
@@ -39,9 +37,6 @@ export class App {
           console.log('===== recordedData changed =====');
 
           let audioData: number[] = snapshot.val();
-
-          // オーディオデータが存在しなければ何もしない
-          if (!audioData) return;
 
           // 対象デバイスのリクエストが実行中なら何もしない
           if (this.activeDeviceIds[deviceId]) return;
