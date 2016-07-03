@@ -11,21 +11,22 @@ import UIKit
 class RootViewController: UIViewController {
 
 	private var fftData: FFTData?
+	private let visualizerController = VisualizerViewController()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		do {
+			let controller = self.visualizerController
+			self.addChildViewController(controller)
+			self.view.addSubview(controller.view)
+			controller.didMoveToParentViewController(self)
+		}
 	}
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
-
-		let controller = VisualizerViewController()
-		controller.dataSource = self
 		
-		self.addChildViewController(controller)
-		self.view.addSubview(controller.view)
-		controller.didMoveToParentViewController(self)
-
 		SoundAnalyzer.sharedInstance.observerEvent { [weak self] event in
 			switch event {
 				case .Update(_, let fftData, _):
@@ -35,10 +36,10 @@ class RootViewController: UIViewController {
 			}
 		}
 
-		FirebaseManager.sharedInstance.observerEvent { [weak controller] event in
+		FirebaseManager.sharedInstance.observerEvent { event in
 			switch event {
 			case .DetectedCommandChanged(let command):
-				controller?.fireCommand(command) {
+				self.visualizerController.fireCommand(command) {
 					FirebaseManager.sharedInstance.resetDetectedCommand()
 				}
 				
@@ -46,6 +47,7 @@ class RootViewController: UIViewController {
 				break
 			}
 		}
+		
 	}
 
 //	override func preferredStatusBarStyle() -> UIStatusBarStyle {
