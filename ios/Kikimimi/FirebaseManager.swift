@@ -86,6 +86,10 @@ final class FirebaseManager {
 		deviceRef?.child("recordedData").setValue(data.values)
 	}
 
+	func resetDetectedCommand() {
+		deviceRef?.child("detectedCommand").removeValue()
+	}
+
 	func observerEvent(observer: EventObserver) {
 		eventObservers.append(observer)
 	}
