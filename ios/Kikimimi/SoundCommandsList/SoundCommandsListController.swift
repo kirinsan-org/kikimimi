@@ -86,6 +86,12 @@ class SoundCommandsListController: UIViewController {
 		let controller = SoundCommandRecordingViewController()
 		navigationController?.pushViewController(controller, animated: true)
 	}
+
+	func edit(command: Command) {
+		let controller = SoundCommandEditViewController()
+		controller.command = command
+		navigationController?.pushViewController(controller, animated: true)
+	}
 	
 }
 
@@ -108,6 +114,7 @@ extension SoundCommandsListController: UITableViewDataSource {
 
 extension SoundCommandsListController: UITableViewDelegate {
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
+		let command = commands[indexPath.item]
+		edit(command)
 	}
 }
