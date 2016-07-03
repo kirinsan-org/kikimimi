@@ -116,6 +116,14 @@ class VisualizerViewController: UIViewController {
 	
 }
 
+extension VisualizerViewController {
+	
+	func fireCommand(command: Command) {
+		
+	}
+	
+}
+
 extension VisualizerViewController: VisualizerSceneDataSource {
 	
 	func getBubbleSettings() -> [(fillColor: SKColor, strokeColor: SKColor)] {
