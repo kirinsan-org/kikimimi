@@ -55,7 +55,8 @@ final class SoundAnalyzer {
 		AudioKit.output = noAudioOutput
 
 		loop = Loop(frequency: 44100, handler: { [unowned self] in
-			let fftData = FFTData(values: self.fft.fftData)
+			let rawData = self.fft.fftData
+			let fftData = FFTData(values: Array(rawData[0...(rawData.count-1)]))
 			let amplitude = self.amplitudeTracker.amplitude
 
 			self.streamingFFTData.append(fftData)
@@ -67,7 +68,7 @@ final class SoundAnalyzer {
 				self.recordingFFTData.append(fftData)
 				print(String(format: "%0.2f%%", Float(self.recordingFFTData.count) / Float(self.recordingFFTDataCapacity) * 100))
 				if self.recordingFFTData.count >= self.recordingFFTDataCapacity {
-					let count = 1024
+					let count = fftData.values.count
 					var averageValues = Array<Double>(count: count, repeatedValue: 0)
 					for i in 0..<count {
 						let values = self.recordingFFTData.map({ $0.values[i] })

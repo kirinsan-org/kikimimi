@@ -65,6 +65,29 @@ final class FirebaseManager {
 		}
 	}
 
+	func registerCommand(with recordedData: [FFTData], completion: (Command) -> Void) {
+		guard let ref = commandRef?.childByAutoId() else {
+			return
+		}
+
+		let audioDataRef = ref.child("audioData")
+		recordedData.forEach { data in
+			audioDataRef.childByAutoId().setValue(data.values)
+		}
+
+		ref.observeEventType(FIRDataEventType.Value, withBlock: { snapshot in
+			guard
+				let value = snapshot.value as? [String : AnyObject],
+				let name = value["name"] as? String,
+				let icon = value["icon"] as? String,
+				let action = value["action"] as? String else {
+					return
+			}
+			let command = Command(id: ref.key, name: name, icon: icon, action: action)
+			completion(command)
+		})
+	}
+
 	func pushRecordedFFTData(data: FFTData) {
 		deviceRef?.child("recordedData").setValue(data.values)
 	}
