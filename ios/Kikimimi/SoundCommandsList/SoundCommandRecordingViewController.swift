@@ -59,7 +59,7 @@ final class SoundCommandRecordingViewController: UIViewController {
 		circleMaskView.layer.borderWidth = 16
 
 		backButton = CircleButton(imageName: "ic_arrow_back_white")
-		backButton.center = CGPoint(x: view.bounds.minX + (8 + 44 / 2), y: view.bounds.minY + (20 + 44 / 2))
+		backButton.center = CGPoint(x: view.bounds.minX + (8 + 44 / 2), y: view.bounds.maxY - (20 + 44 / 2))
 		backButton.autoresizingMask = [.FlexibleRightMargin, .FlexibleBottomMargin]
 		backButton.addTarget(self, action: #selector(SoundCommandRecordingViewController.back), forControlEvents: .TouchUpInside)
 
@@ -108,6 +108,13 @@ final class SoundCommandRecordingViewController: UIViewController {
 				s.progressView.progress = CGFloat(count) / CGFloat(maxCount)
 				if count >= s.recodingSampleCount {
 					s.state = .Done
+					let delay = 0.5 * Double(NSEC_PER_SEC)
+					let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+					dispatch_after(time, dispatch_get_main_queue(), {
+						let controller = SoundCommandEditViewController()
+						controller.recordedFFTData = self?.recordedFFTData ?? []
+						self?.navigationController?.pushViewController(controller, animated: true)
+					})
 				} else {
 					s.state = .Waiting
 				}

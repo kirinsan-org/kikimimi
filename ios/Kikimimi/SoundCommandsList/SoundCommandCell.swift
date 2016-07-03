@@ -16,6 +16,7 @@ final class SoundCommandCell: UITableViewCell {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 
 		backgroundColor = UIColor.blackColor()
+		accessoryType = .DisclosureIndicator
 
 		contentView.addSubview(iconView)
 		contentView.addSubview(nameLabel)
