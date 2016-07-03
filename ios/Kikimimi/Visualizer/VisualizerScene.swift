@@ -26,6 +26,7 @@ class VisualizerScene: SKScene {
 		let speed = self.moveActionSpeed
 		
 		self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+		self.backgroundColor = .blackColor()
 		
 		let radius: CGFloat = min(self.frame.width, self.frame.height) / 5
 		
@@ -143,8 +144,23 @@ class VisualizerScene: SKScene {
 		}).enumerate().forEach({ (i, bubble) in
 			
 			if i < scales.count {
-				let action = SKAction.scaleTo(scales[i], duration: 0.2)
+				let scale = scales[i]
+				let action = SKAction.scaleTo(scale, duration: 0.2)
 				bubble.runAction(action)
+				
+				if scale > 0.8 {
+					if let node = SKEmitterNode(fileNamed: "spark.sks") {
+						node.particleBirthRate = 200
+						node.numParticlesToEmit = 40
+						node.position = bubble.position
+						node.setScale(0.3)
+						
+						self.addChild(node)
+						
+						let action = SKAction.fadeAlphaTo(0, duration: 1)
+						node.runAction(action)
+					}
+				}
 			} else {
 				let action = SKAction.scaleTo(0.5, duration: 0.2)
 				bubble.runAction(action)
