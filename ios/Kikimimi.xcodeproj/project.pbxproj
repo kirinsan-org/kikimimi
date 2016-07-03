@@ -17,6 +17,8 @@
 		790F829F1D284EF2002989B5 /* SoundCommandsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790F829E1D284EF2002989B5 /* SoundCommandsListController.swift */; };
 		BF4FAEB71D28AD5B0078D850 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FAEB61D28AD5B0078D850 /* CircleButton.swift */; };
 		BF4FAEC21D28B3180078D850 /* CommandCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4FAEC11D28B3180078D850 /* CommandCategory.swift */; };
+		790F82A81D28A669002989B5 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 790F82A61D28A669002989B5 /* spark.sks */; };
+		790F82A91D28A669002989B5 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 790F82A71D28A669002989B5 /* spark.png */; };
 		BF6141FD1D27DC54006FE215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6141FC1D27DC54006FE215 /* AppDelegate.swift */; };
 		BF6142041D27DC54006FE215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6142031D27DC54006FE215 /* Assets.xcassets */; };
 		BF6142071D27DC54006FE215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6142051D27DC54006FE215 /* LaunchScreen.storyboard */; };
@@ -87,6 +89,8 @@
 		7907E9201D2820DE0035F715 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7907E9241D2833BC0035F715 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		790F829E1D284EF2002989B5 /* SoundCommandsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCommandsListController.swift; sourceTree = "<group>"; };
+		790F82A61D28A669002989B5 /* spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = spark.sks; sourceTree = "<group>"; };
+		790F82A71D28A669002989B5 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		8DA30DD82BD55E817DFB7947 /* Pods_Kikimimi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kikimimi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75607DB504E676CC501F75A /* Pods-Kikimimi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kikimimi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kikimimi/Pods-Kikimimi.debug.xcconfig"; sourceTree = "<group>"; };
 		BF4FAEB61D28AD5B0078D850 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				7907E91A1D2819AD0035F715 /* VisualizerView.swift */,
 				7907E91C1D2819E40035F715 /* VisualizerScene.swift */,
 				7907E91E1D2820A00035F715 /* BubbleNode.swift */,
+				790F82A61D28A669002989B5 /* spark.sks */,
+				790F82A71D28A669002989B5 /* spark.png */,
 				7907E9201D2820DE0035F715 /* Extensions.swift */,
 				7907E9241D2833BC0035F715 /* GCD.swift */,
 			);
@@ -314,9 +320,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				790F82A91D28A669002989B5 /* spark.png in Resources */,
 				BF6142071D27DC54006FE215 /* LaunchScreen.storyboard in Resources */,
 				BF6142041D27DC54006FE215 /* Assets.xcassets in Resources */,
 				BF6142401D282B09006FE215 /* GoogleService-Info.plist in Resources */,
+				790F82A81D28A669002989B5 /* spark.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

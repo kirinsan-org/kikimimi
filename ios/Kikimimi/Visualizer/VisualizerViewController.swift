@@ -6,7 +6,7 @@
 //  Copyright © 2016年 kirinsan.org. All rights reserved.
 //
 
-import UIKit
+import SpriteKit
 
 protocol VisualizerViewControllerDataSource: class{
 	func getFFTSampleArray() -> [Double]
@@ -16,23 +16,64 @@ class VisualizerViewController: UIViewController {
 	
 	private let visualizerView: VisualizerView
 	
-	private let bubbleColors: [UIColor]
+	private let bubbleColors: [(fillColor: UIColor, strokeColor: UIColor)]
 	
 	weak var dataSource: VisualizerViewControllerDataSource?
 	
 	init(visualizerView view: VisualizerView? = nil) {
 		
 		self.visualizerView = view ?? VisualizerView()
-		let colorStrings = ["FF0000","FF0000","FF0000","FF0000","FF0000","FF0000",
-		                    "FF0000","FF0000","FF0000","FF0000","FF0000","FF0000",
-		                    "FF0000","FF0000","FF0000","FF0000","FF0000","FF0000",
-		                    "FF0000","FF0000","FF0000","FF0000","FF0000","FF0000",
-		                    "FF0000","FF0000","FF0000","FF0000","FF0000","FF0000",
-		                    "FF0000","FF0000"]
-		let colors = colorStrings.map { (colorValue) -> UIColor in
-			let rgbValue = Int(colorValue, radix: 16) ?? 0
-			let rgbaValue = (rgbValue << 8) + 0x7F
-			return UIColor(hexRGBAValue: rgbaValue)
+		let colorStrings = [
+			["ff002a","ff002a"],
+			["ff2f00","ff2f00"],
+			["ff5e00","ff5e00"],
+			["ff8c00","ff8c00"],
+			["ffbb00","ffbb00"],
+			["ffea00","ffea00"],
+			["e5ff00","e5ff00"],
+			["b7ff00","b7ff00"],
+			["88ff00","88ff00"],
+			["59ff00","59ff00"],
+			["2bff00","2bff00"],
+			["00ff33","00ff33"],
+			["00ff62","00ff62"],
+			["00ff91","00ff91"],
+			["00ffbf","00ffbf"],
+			["00ffee","00ffee"],
+			["00e1ff","00e1ff"],
+			["00b2ff","00b2ff"],
+			["0084ff","0084ff"],
+			["0055ff","0055ff"],
+			["0026ff","0026ff"],
+			["0900ff","0900ff"],
+			["3700ff","3700ff"],
+			["6600ff","6600ff"],
+			["9600ff","9600ff"],
+			["c400ff","c400ff"],
+			["f200ff","f200ff"],
+			["ff00dd","ff00dd"],
+			["ff00ae","ff00ae"],
+			["FF007f","FF007f"],
+			["ff0051","ff0051"],
+			["FF0000","FF0000"],
+		]
+		let colors = colorStrings.map { (colorValue) -> (fillColor: UIColor, strokeColor: UIColor) in
+			let fillColor, strokeColor: UIColor
+			
+			do {
+				let rgbValue = Int(colorValue[0], radix: 16) ?? 0
+				let rgbaValue = (rgbValue << 8) + 0x7F
+				fillColor = UIColor(hexRGBAValue: rgbaValue)
+			}
+			
+			do {
+				let rgbValue = Int(colorValue[1], radix: 16) ?? 0
+				let rgbaValue = (rgbValue << 8) + 0x7F
+				strokeColor = UIColor(hexRGBAValue: rgbaValue)
+			}
+			
+			return (fillColor, strokeColor)
+			
 		}
 		self.bubbleColors = colors
 		
@@ -96,9 +137,17 @@ class VisualizerViewController: UIViewController {
 	}
 }
 
+extension VisualizerViewController {
+	
+	func fireCommand(command: Command) {
+		
+	}
+	
+}
+
 extension VisualizerViewController: VisualizerSceneDataSource {
 	
-	func getBubbleSettings() -> [UIColor] {
+	func getBubbleSettings() -> [(fillColor: SKColor, strokeColor: SKColor)] {
 		return self.bubbleColors
 	}
 	
@@ -123,7 +172,8 @@ extension VisualizerViewController: VisualizerSceneDataSource {
 			var newElement = lastFFTElement + element.element
 			
 			if element.index % fftElementsPerBubble == fftElementsPerBubble.decreased {
-//				newElement /= Double(fftElementsPerBubble)
+				newElement /= Double(fftElementsPerBubble)
+				newElement *= 4
 				newElement += 0.5
 			}
 			

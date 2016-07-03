@@ -25,3 +25,12 @@ class BubbleNode: SKShapeNode {
 	}
 	
 }
+
+extension BubbleNode {
+	
+	func setAction(action: SKAction) {
+		self.removeAllActions()
+		self.runAction(action)
+	}
+	
+}
