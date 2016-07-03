@@ -41,6 +41,7 @@ class SoundCommandsListController: UIViewController {
 
 		backButton = CircleButton(imageName: "ic_arrow_back_white")
 		backButton.center = CGPoint(x: addButton.frame.minX - (8 + 44 / 2), y: addButton.center.y)
+		backButton.addTarget(self, action: #selector(SoundCommandsListController.back), forControlEvents: .TouchUpInside)
 
 		view.addSubview(backButton)
 		view.addSubview(addButton)
@@ -74,6 +75,10 @@ class SoundCommandsListController: UIViewController {
 
 	override func preferredStatusBarStyle() -> UIStatusBarStyle {
 		return .LightContent
+	}
+
+	func back() {
+		self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
 	}
 	
 }
