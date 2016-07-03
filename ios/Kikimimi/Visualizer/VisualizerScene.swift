@@ -148,7 +148,7 @@ class VisualizerScene: SKScene {
 				let action = SKAction.scaleTo(scale, duration: 0.2)
 				bubble.runAction(action)
 				
-				if scale > 0.8 {
+				if scale > 0.75 {
 					if let node = SKEmitterNode(fileNamed: "spark.sks") {
 						node.particleBirthRate = 200
 						node.numParticlesToEmit = 40
@@ -196,7 +196,7 @@ class VisualizerScene: SKScene {
 			node.alpha = 0
 			self.addChild(node)
 			
-			let delayAction = SKAction.waitForDuration(NSTimeInterval(i) * 0.3)
+			let delayAction = SKAction.waitForDuration(NSTimeInterval(i) * 0.2)
 			let fadeAction = SKAction.sequence([delayAction, fadeinAction, waitingAction, fadeoutAction])
 			let moveAction = SKAction.moveByX(0, y: 200, duration: 4)
 			let action = SKAction.group([fadeAction, moveAction])
