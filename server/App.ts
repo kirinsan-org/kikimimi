@@ -14,6 +14,7 @@ firebase.initializeApp({
 export class App {
   private command: CommandSet;
   private db;
+  private activeDeviceIds = {}; // HTTPリクエストを実行中の端末IDを覚える
 
   constructor() {
     this.db = firebase.database();
@@ -26,29 +27,53 @@ export class App {
       this.command = snapshot.val();
     });
 
-    // デバイスの録音データが変更されたときの処理
-    this.db.ref('device').on('child_changed', (snapshot) => {
+    this.db.ref('device').once('value', (snapshot) => {
+      snapshot.forEach(child => {
 
-      let device: Device = snapshot.val();
-      let commandId = this.getMostSimilarCommandId(device.recordedData);
+        let deviceId = child.key;
 
-      // 音声のマッチするコマンドが見つかったら対応するURLを叩く
-      if (commandId) {
+        this.db.ref(`device/${deviceId}/recordedData`).on('value', (snapshot) => {
 
-        console.log('detected command', commandId);
+          console.log('===== recordedData changed =====');
 
-        let command = this.command[commandId];
+          let audioData: number[] = snapshot.val();
 
-        // コマンドURLを叩く
-        request.post(command.action)
-          .then(res => console.log('command executed', res), err => console.error('command failed', err));
+          // 対象デバイスのリクエストが実行中なら何もしない
+          if (this.activeDeviceIds[deviceId]) return;
 
-        // デバイスへ通知する
-        this.db.ref(`device/${snapshot.key}/detectedCommand`).set(commandId);
-      }
+          let device: Device = snapshot.val();
+          let commandId = this.getMostSimilarCommandId(audioData);
 
+          // 音声のマッチするコマンドが見つかったら対応するURLを叩く
+          if (commandId) {
+
+            console.log('detected command', commandId);
+            console.log('run on device', deviceId);
+
+            let command = this.command[commandId];
+            this.activeDeviceIds[deviceId] = true;
+
+            // コマンドURLを叩く
+            request.post(command.action)
+              .then(res => {
+                console.log('command executed', res);
+
+                // 実行中フラグを削除する
+                delete this.activeDeviceIds[deviceId];
+              }, err => {
+                console.error('command failed', err);
+
+                // 実行中フラグを削除する
+                delete this.activeDeviceIds[deviceId];
+              });
+
+            // デバイスへ通知する
+            console.log(`device/${deviceId}/detectedCommand`, commandId);
+            this.db.ref(`device/${deviceId}/detectedCommand`).set(commandId);
+          }
+        });
+      });
     });
-
   }
 
   /**
