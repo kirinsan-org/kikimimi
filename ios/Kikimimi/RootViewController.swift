@@ -19,6 +19,7 @@ class RootViewController: UIViewController {
 		do {
 			let controller = self.visualizerController
 			self.addChildViewController(controller)
+			controller.dataSource = self
 			self.view.addSubview(controller.view)
 			controller.didMoveToParentViewController(self)
 		}
